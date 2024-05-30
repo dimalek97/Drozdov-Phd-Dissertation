@@ -1,0 +1,20 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+    \usetikzlibrary{arrows.meta}
+        
+\usepackage{graphicx} % Работа с графикой \includegraphics{}
+\graphicspath{{./images/img1/}} % картинки в папке ./images/img1/
+    
+\begin{document}
+
+\begin{tikzpicture}
+    %\draw[help lines] (-6,-3) grid (6,3);
+    \node at (0,0)
+        {\includegraphics[width=11.05cm]{trucs2.png}};
+    \draw[fill=black] (0,1.55)circle(0.07);
+    \node at(-4,-0.5){$C$};
+    \draw[->,>={Latex[length=7pt]},line width=1pt,red] (-3.5,-0.3)--(0,1.55);
+\end{tikzpicture}
+
+\end{document}

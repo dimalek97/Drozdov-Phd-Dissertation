@@ -1,0 +1,25 @@
+% GPS_and_A
+\documentclass{standalone}
+
+\usepackage{tikz}
+    
+\usepackage{graphicx} % Работа с графикой \includegraphics{}
+\graphicspath{{./images/img1/}} % картинки в папке ./images/img1/
+    
+\begin{document}
+
+\begin{tikzpicture}
+    \node[above] at (3,0) 
+        {\includegraphics[width=6cm]{gps1.jpg}};
+    \node[above] at (10,-0.7) 
+        {\includegraphics[width=6.15cm]{tyl.jpg}};
+    % \draw[step=0.1,yellow,very thin] (0,-1) grid (13,5); 
+    % \draw[step=1,green,very thin] (0,-1) grid (13,5); 
+    \node at (1.2,1.8) {$P_1$};
+    \node at (4,2)     {$P_2$}; 
+    \node at (2.5,2)   {$P$};
+    \node at (8.7,1.2) {$K_1$};
+    \node at (12,1.8)  {$K_2$};
+\end{tikzpicture}
+
+\end{document}

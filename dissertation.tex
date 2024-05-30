@@ -1,0 +1,34 @@
+% Формат А4, 14pt (ГОСТ Р 7.0.11-2011, 5.3.6)
+\documentclass[oneside, 14pt, a4paper]{extbook}
+
+\input{common/packages}     % Пакеты для диссертации
+\input{common/newnames}     % Новые переменные и переименования
+\input{common/disstyles}    % Настройки и стилизация
+
+% \includeonly{
+%     dissertation/title,
+%     dissertation/contents, 
+%     dissertation/introduction,
+%     dissertation/part1,
+%     dissertation/part2,
+%     dissertation/part3,
+%     dissertation/references,
+% }
+
+\begin{document}
+
+% Структура диссертации (ГОСТ Р 7.0.11-2011, 4)
+
+\include{dissertation/title}           % Титульный лист
+\include{dissertation/contents}        % Оглавление
+\include{dissertation/introduction}    % Введение
+\include{dissertation/part1}           % Глава 1 (деформации СПС)
+\include{dissertation/part2}           % Глава 2 (пересечения ФК)
+\include{dissertation/part3}           % Глава 3 (квадраты с FIP)
+\include{dissertation/conclusion}      % Заключение
+% \include{dissertation/acronyms}        % Список сокращений и условных обозначений
+% \include{dissertation/dictionary}      % Словарь терминов
+\include{dissertation/references}      % Список литературы
+% \include{dissertation/lists}           % Списки таблиц и изображений (иллюстративный материал)
+
+\end{document}

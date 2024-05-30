@@ -1,0 +1,16 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+    
+\begin{document}
+\begin{tikzpicture}
+    \node[shift={(5,5)}]
+        {\includegraphics[width=10cm]{faces3.png}};
+    \node[shift={(5,9.7)}]{\large$P_\alpha$};
+    \node[shift={(1.5,5.4)},rotate=0]{\large$E'_\alpha$};
+    \node[shift={(3.2,1.4)},rotate=0]{\large$E_\alpha$};
+    \node[shift={(7,9.37)}]{\large$\alpha=(0,1,1)$};
+    %\draw[help lines] (0,0) grid (10,10);
+\end{tikzpicture}
+\end{document}

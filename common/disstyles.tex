@@ -1,0 +1,110 @@
+%%% Макет страницы %%%
+% Выставляем значения полей (ГОСТ 7.0.11-2011, 5.3.7)
+\usepackage[a4paper, top=2cm, bottom=2cm, left=2.5cm, right=1cm, nofoot, nomarginpar]{geometry}
+\setlength{\topskip}{0pt}   %размер дополнительного верхнего поля
+\setlength{\footskip}{12.3pt} % снимет warning, согласно https://tex.stackexchange.com/a/334346
+
+
+%%% Интервалы %%%
+%% По ГОСТ Р 7.0.11-2011, пункту 5.3.6 требуется полуторный интервал
+\usepackage{setspace} % Реализация средствами класса (на основе setspace) ближе к типографской классике.
+%% И правит сразу и в таблицах (если со звёздочкой)
+%\DoubleSpacing*     % Двойной интервал
+\onehalfspacing    % Полуторный интервал
+%\setSpacing{1.42}   % Полуторный интервал, подобный Ворду (возможно, стоит включать вместе с предыдущей строкой)
+\renewcommand{\baselinestretch}{1} % интервал между абзацами
+
+\usepackage{indentfirst} % отделять первую строку раздела абзацным отступом
+\renewcommand{\baselinestretch}{1} % интервал между абзацами
+\setlength{\parskip}{0cm}
+\setlength\parindent{5ex} % абзацный отступ равный по ширине пяти строчным буквам основного шрифта
+%\parindent=1cm
+
+
+%%% Выравнивание и переносы %%%
+%% http://tex.stackexchange.com/questions/241343/what-is-the-meaning-of-fussy-sloppy-emergencystretch-tolerance-hbadness
+%% http://www.latex-community.org/forum/viewtopic.php?p=70342#p70342
+\tolerance 1414
+\hbadness 1414
+\emergencystretch 1.5em % В случае проблем регулировать в первую очередь
+\hfuzz 0.3pt
+\vfuzz \hfuzz
+%\raggedbottom
+%\sloppy                 % Избавляемся от переполнений
+\clubpenalty=10000      % Запрещаем разрыв страницы после первой строки абзаца
+\widowpenalty=10000     % Запрещаем разрыв страницы после последней строки абзаца
+\brokenpenalty=4991     % Ограничение на разрыв страницы, если строка заканчивается переносом
+
+\pagestyle{plain} % без колонтитулов, номера страниц внизу в центре
+
+
+
+\usepackage{environ}
+
+\makeatletter
+\long\def\@secondofthree#1#2#3{#2}
+\long\def\@thirdoffour#1#2#3#4{#3}
+
+% #1 -- theorem type
+% #2 -- name
+\NewEnviron{restatethis}[2]{%
+  \begin{#1}%
+      \BODY
+      % Do the write inside the body of the theorem environment because if I do it afterwards it messes
+      % up the spacing for some strange reason...
+      \protected@write\@auxout{}{%
+        \string\@restatetheorem{#1}{#2}{\csname the#1\endcsname}{\detokenize\expandafter{\BODY}}%
+      }%
+  \end{#1}%
+}
+
+% Figure out which macro to redefine to change the numbering.
+% Easy if thmtools is loaded, otherwise we have to extract the name from some macro.
+% This will break if some jerk loads thmtools and then ntheorem.
+\@ifpackageloaded{thmtools}{%
+    % just use the name of the environment
+    \def\restatethm@getthmcountercsname#1{\def\thethmcsname{#1}}%
+}{%
+    \@ifpackageloaded{ntheorem}{%
+        % extract the right macro from \mkheader@thmtype -> ???? \@thm{environmentname}{numberwithname}{thmname}
+        \def\restatethm@getthmcountercsname#1{%
+            \def\thethmcsname{\expandafter\expandafter\expandafter\restatethm@ntheorem@getthmcountercsname@helper\csname mkheader@#1\endcsname}}%
+        \def\restatethm@ntheorem@getthmcountercsname@helper#1\@thm#2#3#4{#3}
+    }{%
+        \@ifpackageloaded{amsthm}{%
+            % extract the right macro from \thmtype -> \@thm{????}{numberwithname}{thmname} (it's the third thing)
+            \def\restatethm@getthmcountercsname#1{\edef\thethmcsname{\expandafter\expandafter\expandafter\@thirdoffour\csname#1\endcsname}}%
+        }{%
+            % extract the right macro from \thmtype -> \@thm{numberwithname}{thmname} (it's the second thing)
+            \def\restatethm@getthmcountercsname#1{\edef\thethmcsname{\expandafter\expandafter\expandafter\@secondofthree\csname#1\endcsname}}%
+        }%
+    }%
+}
+
+% #1 -- environment type
+% #2 -- name for restating
+% #3 -- number
+% #4 -- content
+\newcommand{\@restatetheorem}[4]{%
+  \expandafter\gdef\csname restatethis@#2\endcsname{%
+    \begingroup
+    % First we have to set the numerical label to the right value.
+    \restatethm@getthmcountercsname{#1}
+    \expandafter\def\csname the\thethmcsname\endcsname{#3}%
+    % Print the theorem
+    \begin{#1}#4\end{#1}%
+    \endgroup
+  }%
+}
+\newcommand{\restate}[1]{\csname restatethis@#1\endcsname} % Just use the stored macro
+\makeatother
+
+
+\newtheorem{theorem}               {\bf Теорема}     [chapter]
+\newtheorem{corollary}   [theorem] {\bf Следствие}
+\newtheorem{lemma}       [theorem] {\bf Лемма}
+\newtheorem{proposition} [theorem] {\bf Предложение}
+\newtheorem{definition}            {\bf Определение} [chapter]
+\newtheorem{remark}                {\bf Замечание}   [chapter]
+\newtheorem{example}               {\bf Пример}      [chapter]
+

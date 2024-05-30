@@ -1,0 +1,88 @@
+%%% Кодировка и локализация %%%
+\usepackage[utf8]{inputenc} % кодовая страница документа
+\usepackage[T2A]{fontenc} % внутренняя кодировка  TeX
+\usepackage[english,russian]{babel} % локализация и переносы
+
+
+%%% Гипперссылки и pdf %%%
+\usepackage{cmap} % русский поиск в pdf
+\usepackage[pagebackref]{hyperref} % гиперссылки
+% для pagebackref после каждого bibitem нужна пустая строка или \par
+\hypersetup{
+    unicode, % корректная работа ссылок с кириллицей
+    psdextra, % частично корректная работа ссылок с формулами (не все, ещё есть проблемы с math shift, subscript и superscript)
+    pdftitle={Деформации фрактальных кубов}, % название документа
+    pdfsubject={Диссертация аспиранта}, % тема документа
+    pdfauthor={Дроздов Дмитрий Алексеевич}, % авторы документа
+    pdfkeywords={Фрактальный квадрат, фрактальный куб, самоподоное множество}, % список ключевых слов,
+    colorlinks, % текст гиперссылки будет выделяться цветом, а рамки не будет
+    linkcolor=red, % цвет текста ссылок на мишени внутри документа
+    pagecolor=red, % цвет текста ссылок на страницы
+    filecolor=cyan, % цвет текста ссылок на локальные PDF файлы
+    citecolor=blue, % цвет библиографических ссылок команды \cite
+    urlcolor=blue, % цвет текста ссылок на ресурсы с URL
+    % draft, % отключить все гипертекстовые опции
+}
+
+
+%%% Пакеты для формул %%%
+\usepackage{amsmath} % удобная вёрстка многострочных формул, масштабирующийся текст в формулах, формулы в рамках и др.
+\usepackage{amssymb} % несколько сотен дополнительных математических символов
+\usepackage{amsthm} % окружения «теорема», «лемма» и т. п.
+\usepackage{amsfonts} % Ажурный \mathbb{} и готический \mathfrak{} шрифты
+\usepackage{mathrsfs} % Mathematical Script letters (шрифт Эйлера) \mathscr{}
+\usepackage{euscript} % Шрифт Евклида \EuScript{}
+% каллиграфический шрифт \mathcal{} не требует пакета
+\usepackage{enumitem}
+\usepackage{bm}
+\usepackage{multicol}
+\usepackage{cite}     % оптимизирует списки цитирования
+
+
+%%% Графика, изображения и цвета %%%
+\usepackage[usenames]{color} % позволяет задавать цвет текста и фона, как отдельного блока, так и всего документа
+\usepackage{graphicx} % Работа с графикой \includegraphics{}
+\usepackage{float} % Фиксация плавабщих боксов [H]
+\graphicspath{
+    {./images/}, 
+    {./images/img1/}, 
+    {./images/img2/}, 
+    {./images/img3/}, 
+    {./images/tikz1/}, 
+    {./images/tikz2/}, 
+    {./images/tikz3/},
+    {./images/tree/}
+    }
+% Вставка tikz-картинок с помощью \includestandalone[width=\textwidth]{images/tikz1/name.tex}
+% requires -shell-escape
+% \usepackage[mode=buildnew]{standalone} 
+% \usepackage{tikz}
+%     \usetikzlibrary{decorations.markings}
+%     \usetikzlibrary{arrows}
+%     \usetikzlibrary{arrows.meta}
+%     \usetikzlibrary{cd}
+%     \usetikzlibrary{calc}
+
+
+% \bibliographystyle{gost-numeric.bbx}
+% \usepackage[parentracker=true,
+%             backend=biber,
+%             hyperref=false,
+%             bibencoding=utf8,
+%             style=numeric-comp,
+%             language=auto,
+%             autolang=other,
+%             citestyle=gost-numeric,
+%             defernumbers=true,
+%             bibstyle=gost-numeric,
+%             sorting=ntvy,
+%             ]{biblatex}
+% \addbibresource{dissbib.bib}
+
+% \usepackage[ %
+%             style = gost-numeric, %
+%             autolang = other, %
+%             defernumbers, %
+%                 ]{biblatex}
+% \addbibresource{dissbib.bib}
+
