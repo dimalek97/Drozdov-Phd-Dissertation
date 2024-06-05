@@ -22,7 +22,6 @@
 \usepackage{enumitem}
 \usepackage{bm}
 \usepackage{multicol}
-\usepackage{cite}     % оптимизирует списки цитирования
 
 %%% Графика, изображения и цвета %%%
 \usepackage{graphicx} % Работа с графикой \includegraphics{}
@@ -38,6 +37,14 @@
     {./images/tree/},
     {./images/presentation/},
     }
+    
+\newtheorem{theorem}     {Теорема}
+\newtheorem{lemma}       {Лемма}
+\newtheorem{proposition} {Предложение}
+\newtheorem{corollary}   {Следствие}
+\newtheorem{definition}  {Определение}
+\newtheorem{example}     {Пример} 
+\newtheorem{remark}      {Замечание}
    
 %%% Настройки презентации %%%
 \everymath{\color{blue}}    % цвет формул в текстмоде
@@ -47,6 +54,8 @@
 \setbeamertemplate{page number in head/foot}[totalframenumber]
 \setbeamertemplate{bibliography item}{\insertbiblabel}
 \hypersetup{unicode=true} % разрешить использование символов Юникод в закладках. настройка для hiperref
+
+\input{common/newnames}     % Новые переменные и переименования
 
 %%% Данные для титульного листа %%%
 \title[Анализ на самоподобных множествах с конечным пересечением]
@@ -78,8 +87,32 @@
 \end{frame}
 
 
-\begin{frame}{Стягиваемая полигональная система}
-
+\begin{frame}{Стягиваемые $P$-полигональные  системы}
+Даны многоугольник $P\IN \mathbb R^2$, множество его вершин $V_P=\{A_1,...,A_{n_P}\}$  и такая система подобий $\eS = \{S_1, \ldots, S_m\}$ в $\mathbb R^2$, что:\\
+\only<1>{\[ \includegraphics[width=.7\textwidth]{2_11.png}\]}
+\only<2>{
+{\bf(D1)}  для любого $i\in I$, множество $P_i=S_i(P)\IN P$;\\
+\[ \includegraphics[width=.7\textwidth]{2_22.png}\]}
+\only<3>{
+{\bf(D1)}  для любого $i\in I$, множество $P_i=S_i(P)\IN P$;\\
+{\bf(D2)}  для любых $i\neq j,\ \   i, j \in I,$ $P_i \cap P_j=V_{P_i}\cap V_{P_j}$ ;\\
+\[ \includegraphics[width=.7\textwidth]{2_23.png}\]}
+\only<4>{
+{\bf(D1)}  для любого $i\in I$, множество $P_i=S_i(P)\IN P$;\\
+{\bf(D2)}  для любых $i\neq j,\ \   i, j \in I,$ $P_i \cap P_j=V_{P_i}\cap V_{P_j}$ ;\\
+{\bf(D3)}  $V_P\IN \bigcup\limits_{i\in I}S_i(V_P)$;\\
+\[ \includegraphics[width=.7\textwidth]{2_24.png}\]}
+\only<5>{
+{\bf(D1)}  для любого $i\in I$, множество $P_i=S_i(P)\IN P$;\\
+{\bf(D2)}  для любых $i\neq j,\ \   i, j \in I,$ $P_i \cap P_j=V_{P_i}\cap V_{P_j}$ ;\\
+{\bf(D3)}  $V_P\IN \bigcup\limits_{i\in I}S_i(V_P)$;\\
+{\bf(D4)}  множество    ${\wP} = \bigcup \limits_{i = 1}^m P_i$ стягиваемо.
+\begin{definition}
+Система \ $\eS $, удовлетворяющая условиям {\bf (D1)-(D4)},
+называется  стягиваемой $P$-полигональной  системой подобий.
+\end{definition}
+\begin{theorem} Аттрактор $K$  стягиваемой  $P$-полигональной  системы подобий $\eS$ является дендритом.
+\end{theorem}}
 \end{frame}
 
 
