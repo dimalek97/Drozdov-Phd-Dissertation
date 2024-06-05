@@ -60,7 +60,7 @@
 %%% Данные для титульного листа %%%
 \title[Анализ на самоподобных множествах с конечным пересечением]
     {Анализ на самоподобных множествах с конечным пересечением}
-\author[Dmitry Drozdov]
+\author[Дмитрий Дроздов]
     {Дмитрий Дроздов \\ {\tt d.drozdov1@g.nsu.ru}}
 \institute[ИМ СО РАН]{Институт математики имени С. Л. Соболева СО РАН}
 \date[20.02.2024]
@@ -75,10 +75,41 @@
 \end{frame}
 
 
-\section{Деформации полигональных дендритов}
-
 \begin{frame}{Самоподобное множество}
 
+\only<1>{
+    \begin{definition}[Hutchinson J. E. (1981)]
+        Пусть $\eS=\{S_1, \ldots, S_m\}$ --- система сжимающих подобий в $\mathbb{R}^n$.  
+        Непустой компакт $K$, удовлетворяющий уравнению  $K=\bigcup\limits_{i=1}^m S_i(K)$, будем называть {\em аттрактором системы} $\eS$ или множеством, самоподобным (инвариантным) относительно системы $\eS$.
+    \end{definition}
+    \begin{block}{}
+        Для системы $\eS=\{S_1,\ldots,S_r\}$ сжимающих подобий в $\rr^k$  равенством $T(A)=\bigcup\limits_{i=1}^r S_i(A)$ задётся соответствующий оператор Хатчинсона на $C(\rr^k)$.
+    \end{block}
+    Мы обозначим как $I=\{1, \ldots, m\}$ множество индексов системы $\eS$, а также обозначим как $I^{*}=\bigcup\limits_{n=1}^\infty I^n$ множество слов $\bm{i}=i_1\ldots i_n$ конечной длинны алфавита $I$, называемых {\em мультииндексами}.
+    Мы будем использовать сокращение $S_{\bj} = S_{j_{1}j_{2}\ldots j_{n}}=S_{j_{1}}S_{j_{2}} \ldots S_{j_{n}}$ и обозначим $S_{\bj}(K)$ как $K_{\bj}$.
+    Множество $K_\bj$,  где $\bj=j_{1}j_{2}\ldots j_{n}$,  будем называть {\em копией порядка (итерации) $n$} множества $K$.
+    \footnotetext[1]{Hutchinson J. E., Fractals and self-similarity, Indiana Univ. Math. J. \textbf{30} (1981), 713--747.}}
+\only<2>{
+    \includegraphics[width=0.4\textwidth]{GosperCarpet.png}
+    \hfill
+    \includegraphics[width=0.55\textwidth]{LevyCurve.png}}
+\end{frame}
+
+
+\begin{frame}{Граф-ориентированная система}
+\only<1>{
+    \begin{definition}[Mauldin \& Williams (1988)]
+        Пусть $\{\eS_{ij}\ |\ i,j=1,\ldots,k\}$ --- набор систем сжимающих отображений, причём для некоторых $i, j$ система $\eS_{ij}$ может быть пустой.
+        Пусть этим системам соответствуют операторы Хатчинсона $\{T_{ij}(A)\}$.
+        Тогда набор компактов
+        $$\left\{K_i=\bigcup\limits_{j=1}^k T_{ij}(K_j)\ |\ i=1,\ldots,k\right\}$$ 
+        будем называть аттрактором граф-ориентированной системы из $k$ компонент.
+    \end{definition}
+    \centering{
+        \includegraphics[width=0.5\textwidth]{GDS.pdf}}
+    \footnotetext[2]{Mauldin R. D., Williams S. C., Hausdorff dimension in graph directed constructions, Trans. Amer. Math. Soc. (2) \textbf{309} (1988), 811--829.}}
+\only<2>{
+    \includegraphics[width=\textwidth]{gds2.png}}
 \end{frame}
 
 
@@ -89,9 +120,9 @@
 
 \begin{frame}{Стягиваемые $P$-полигональные  системы}
 Даны многоугольник $P\IN \mathbb R^2$, множество его вершин $V_P=\{A_1,...,A_{n_P}\}$  и такая система подобий $\eS = \{S_1, \ldots, S_m\}$ в $\mathbb R^2$, что:\\
-\only<1>{\[ \includegraphics[width=.7\textwidth]{2_11.png}\]}
+\only<1>{\[ \includegraphics[width=.7\textwidth]{presentation/2_11.png}\]}
 \only<2>{
-{\bf(D1)}  для любого $i\in I$, множество $P_i=S_i(P)\IN P$;\\
+    {\bf(D1)}  для любого $i\in I$, множество $P_i=S_i(P)\IN P$;\\
 \[ \includegraphics[width=.7\textwidth]{2_22.png}\]}
 \only<3>{
 {\bf(D1)}  для любого $i\in I$, множество $P_i=S_i(P)\IN P$;\\
@@ -156,8 +187,74 @@
 \end{frame}
 
 
-\begin{frame}{}
+\begin{frame}{Самоподобная граница}
+\begin{definition}
+{\em Критическое множество} аттрактора $K$ системы $\eS$ --- это множество $C:=\{x:\; x\in S_i(K)\cap S_j(K),\; S_i, S_j\in\eS\}$ точек попарных пересечений копий аттрактора $K$.
+\end{definition}
+\begin{definition}
+{\em Самоподобной границей} аттрактора $K$ называется множество $\dd K$ всех $x\in K$ таких, что для некоторого $\bj\in I^*$ верно $S_\bj(x)\in C$.
+\end{definition}
+\end{frame}
 
+
+\begin{frame}{Простой граф пересечений}
+\begin{definition}
+Обозначим как $\tilde{\Gamma}(\eS)$ граф, вершинам которого соответствуют копии $\{K_i:\; i\in I\}$, а пара вершин $K_i,K_j$ соединена ребром, если $K_i\cap K_j\neq\0$.
+Назовём такой граф {\em простым графом пересечений} для $K(\eS)$ 
+\end{definition}
+
+\begin{theorem}[Критерий связности, Hata M. (1985)]
+Аттрактор $K$ системы $\eS$ связен тогда и только тогда, когда его простой граф пересечений $\tilde{\Gamma}(\eS)$ связен.
+\end{theorem}
+\footnotetext[5]{Hata Masayoshi, On the structure of self-similar sets, Japan Journal of Applied Mathematics 2 (1985), 381--414.}
+% \footnotetext[2]{Bandt C. and Keller K., Self-Similar Sets 2. A Simple Approach to the Topological Structure of Fractals, Mathematische Nachrichten 154, 1(1991), 27--39}
+\end{frame}
+
+
+\begin{frame}{Двудольный граф пересечений}
+\only<1>{
+\begin{definition}
+Пусть множество $K=K(\eS)$ --- самоподобный континуум, обладающий свойством одноточечного пересечения.
+{\em Граф пересечений} $\Gamma(\eS)$ системы $\eS$ --- это двудольный граф с долями $\eK=\{K_i:\; i\in I\}$ и $\eP=\{p:\;p\in K_i\cap K_j,\; i,j\in I, i\neq j\}$, и с множеством рёбер $E=\{(K_i,p):p\in K_i\}$.
+\end{definition}
+Мы называем $K_i\in \eK$ {\em белыми вершинами}, а $p\in \eP$   {\em чёрными вершинами} графа $\Ga$.\\
+
+Набор компактов $\mathcal{A}=\{A_i,i\in I\}$ в $\mathbb{R}^n$ называют {\em системой со свойством одноточечного пересечения}, если для любых $i\neq j\in I$, пересечение $P_{ij}=A_i\cap A_j$ не более чем одноточечно.
+
+
+\begin{definition}
+{\em Дендрит} --- это локально связный континуум, не содержащий простых замкнутых дуг
+\end{definition}
+\begin{theorem}[Tetenov A. V. (2021)]
+Пусть $K=K(\eS)$ --- самоподбный континуум со свойством одноточечного пересечения.
+Если граф пересечений $\hat\Gamma(\eS)$ системы $\eS$ является деревом, то её аттрактор $K$ --- дендрит.
+\end{theorem}
+\footnotetext[6]{Tetenov A., Finiteness properties for self-similar continua, arXiv:2003.04202 (2021)}}
+\end{frame}
+
+%\begin{frame}{Двудольный граф пересечений для фрактального квадрата дендрита}
+%\includegraphics[width=0.3\textwidth]{P1.png}
+%\hfill
+%\includegraphics[width=0.3\textwidth]{K.png}
+%\hfill
+%\includegraphics[width=0.3\textwidth]{BIG.pdf}
+%\end{frame}
+
+
+\begin{frame}{Грани единичного квадрата}
+\begin{columns}
+\column{0.5\textwidth}
+\includegraphics[width=\textwidth]{faces.pdf}
+\column{0.5\textwidth}
+\begin{definition}
+Пусть $\bma\in A=\{-1,0,1\}^2$, тогда {\em гранью $P_\bma$ единичного квадрата $P$} назовём множество $P_\bma:=P\cap(P+\bma)$.\\
+$P\cap(P+\bma)=P_\bma=P_{-\bma}+\bma$
+\end{definition}
+% \begin{definition}
+% Для разных $\bmb,\bma\in A$ мы будем говорить что $\bmb=(\beta_1,\ldots,\beta_k)$ больше $\bma=(\alpha_1,\ldots,\alpha_k)$ и обозначать это как $\bmb\sqsupset\bma$, если для каждой координаты $\alpha_i=\pm1$ выполняется $\alpha_i=\beta_i$.
+% \end{definition}
+\end{columns}
+% \footnotetext[4]{M. Elekes, T. Keleti, A.M\'ath\'e, Self-similar and self-affine sets: measure of the intersection of two copies, Ergod. Th. \& Dynam. Sys. \textbf{30} (2010), 399--440}
 \end{frame}
 
 
