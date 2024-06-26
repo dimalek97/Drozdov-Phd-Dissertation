@@ -6,7 +6,8 @@
 
 %%% Гипперссылки и pdf %%%
 \usepackage{cmap} % русский поиск в pdf
-\usepackage[pagebackref]{hyperref} % гиперссылки
+ \usepackage[pagebackref]{hyperref} % гиперссылки
+%\usepackage{hyperref} % гиперссылки
 % для pagebackref после каждого bibitem нужна пустая строка или \par
 \hypersetup{
     unicode, % корректная работа ссылок с кириллицей
@@ -36,7 +37,7 @@
 \usepackage{enumitem}
 \usepackage{bm}
 \usepackage{multicol}
-\usepackage{cite}     % оптимизирует списки цитирования
+% \usepackage{cite}     % оптимизирует списки цитирования
 
 
 %%% Графика, изображения и цвета %%%
@@ -64,8 +65,7 @@
 %     \usetikzlibrary{calc}
 
 
-% \bibliographystyle{gost-numeric.bbx}
-% \usepackage[parentracker=true,
+%\usepackage[parentracker=true,
 %             backend=biber,
 %             hyperref=false,
 %             bibencoding=utf8,
@@ -77,12 +77,5 @@
 %             bibstyle=gost-numeric,
 %             sorting=ntvy,
 %             ]{biblatex}
-% \addbibresource{dissbib.bib}
-
-% \usepackage[ %
-%             style = gost-numeric, %
-%             autolang = other, %
-%             defernumbers, %
-%                 ]{biblatex}
-% \addbibresource{dissbib.bib}
+%\addbibresource{dissbib.bib}
 
