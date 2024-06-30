@@ -1,0 +1,20 @@
+% Формат А4, 14pt (ГОСТ Р 7.0.11-2011, 5.3.6)
+\documentclass[oneside, 14pt, a4paper]{extreport}
+
+\input{common/packages}     % Пакеты для диссертации
+\input{common/newnames}     % Новые переменные и переименования
+\input{common/disstyles}    % Настройки и стилизация
+
+\begin{document}
+
+% Структура диссертации (ГОСТ Р 7.0.11-2011, 4)
+
+\include{qualification-work/title}           % Титульный лист
+\include{qualification-work/contents}        % Оглавление
+\include{qualification-work/introduction}    % Введение
+\include{qualification-work/part1qw}         % Глава 1 (деформации СПС)
+\include{qualification-work/part2qw}         % Глава 2 (квадраты с SIP)
+\include{qualification-work/conclusion}      % Заключение
+\include{qualification-work/references}      % Список литературы
+
+\end{document}
