@@ -9,7 +9,7 @@
 * каталог `dissertation`: составные компоненты кандидатсткой диссертации
 * каталог `qualification-work`: составные компоненты квалификационной работы
 * каталог `images`: файлы с изображениями, общие для диссертации, презентации и квалификационной работы
-* файл `.gitignore`: собран сервисом [gitignore.io](https://www.toptal.com/developers/gitignore/) и дополнен в GitGub Desktop
+* файл `.gitignore`: собран сервисом [gitignore.io](https://www.toptal.com/developers/gitignore/) и дополнен в GitHub Desktop
 * файл `dissbib.bib`: файл с библиографией. не задействован, но обновляется
 * файл `dissertation.tex`: собирающий файл кандидатской диссертации
 * файл `presentation.tex`: старая версия презентации, требуется переработка
