@@ -189,8 +189,8 @@ $$d_{2i}-d_{1i}+n\al_i=\be_i.$$
  \item[(ii)] Если $\#G_{\bma\bma}=1$, существует непустое $F_\bmb$ при $\bmb\sqsupset\bma$ и $\#G_{\bma\bmb}\geq1$, то $F_\bma$ бесконечное счётное.
  \item[(iii)] Множество $F_\bma$ конечно в следующих случаях:
  \begin{itemize}[nolistsep]
- \item[\textbf{(a)}] $\#G_{\bma\bma}=1$ и $\#F_\bmb\cdot\#G_{\bma\bmb}=0$ для $\bmb\sqsupset\bma$;
- \item[\textbf{(b)}] $\#G_{\bma\bma}=0$ и $\#F_\bmb\cdot\#G_{\bma\bmb}\geq1$ для $\bmb\sqsupset\bma$.
+ \item[\textbf{(a)}] $\#G_{\bma\bma}=1$ и $\#F_\bmb\cdot\#G_{\bma\bmb}=0$ для каждого $\bmb\sqsupset\bma$;
+ \item[\textbf{(b)}] $\#G_{\bma\bma}=0$ и существует $\bmb\sqsupset\bma$ такое, что $\#F_\bmb\cdot\#G_{\bma\bmb}\geq1$.
  \end{itemize}
 \end{itemize} 
 \end{theorem}
@@ -199,26 +199,39 @@ $$d_{2i}-d_{1i}+n\al_i=\be_i.$$
 Для $\bma\in A\mmm\{0\}$ множество $F_\bma$ удовлетворяет уравнению
 $F_\bma=\bigcup\limits_{\bmb\sqsupseteq\bma} \dfrac{F_\bmb+G_{\bma\bmb}}{n}$, 
 где $G_{\bma\bmb}=D_\bma\cap(D_{-\bma}+n\bma-\bmb)$.
-При этом для $\bma\in\{(1,0), (-1,0), (0,1), (0,-1)\}$ верно $\#\{\bmb:\bmb\sqsupset\bma\}=2$, при этом $\bmb\in\{(1,1), (-1,1), (1,-1), (-1,-1)\}$.
+Для $\bma\in\{(1,0), (-1,0), (0,1), (0,-1)\}$ верно $\#\{\bmb:\bmb\sqsupset\bma\}=2$, при этом $\bmb\in\{(1,1), (-1,1), (1,-1), (-1,-1)\}$.
 Если $\bma\in\{(1,1), (-1,1), (1,-1), (-1,-1)\}$, то $\#\{\bmb:\bmb\sqsupset\bma\}=0$.\\
 
-Теперь, если $\bma\in\{(1,1), (-1,1), (1,-1), (-1,-1)\}$, то $\#G_{\bma\bmb}\leq1$, значит согласно \ref{sideint} множество $F_\bma$ не более чем одноточечно.\\
+Теперь, если $\bma\in\{(1,1), (-1,1), (1,-1), (-1,-1)\}$, то $\#G_{\bma\bmb}\leq1$, значит, согласно \ref{sideint}, множество $F_\bma$ не более чем одноточечно.\\
 
 Далее предполагаем, что $\bma\in\{(1,0), (-1,0), (0,1), (0,-1)\}$.\\
 
 (i) Если $\#G_{\bma\bma}> 1$, то $F_\bma$ содержит в себе фрактальный квадрат $Q_\bma=\dfrac{Q_\bma+G_{\bma\bma}}{n}$ с мощностью континуум.\\
 
-(ii) Пусть $\#G_{\bma\bma}=1$, существует непустое $F_\bmb$ при $\bmb\sqsupset\bma$ и $\#G_{\bma\bmb}\geq1$. 
+(ii) Рассмтрим случай, когда $\#G_{\bma\bma}=1$, существует непустое $F_\bmb$ при $\bmb\sqsupset\bma$ и $\#G_{\bma\bmb}\geq1$. 
 Такое непустое $F_\bmb$ единственное, ведь иначе $\#G_{\bma\bma}>1$.
-Множество $\dfrac{F_\bmb+G_{\bma\bmb}}{n}$ конечно, поэтому $F_\bma=\bigcup\limits_{n=1}^\8 S_\bma^n$ .
+Множество $\dfrac{F_\bmb+G_{\bma\bmb}}{n}$ конечно, поэтому $F_\bma=\bigcup\limits_{n=1}^\8 S_\bma^n$.\\
 
+(iii {\bf a}) Пусть $G_{\bma\bma}=d_i$ и $\#F_\bmb\cdot\#G_{\bma\bmb}\geq1$ для $\bmb\sqsupset\bma$.
+В этом случае $F_\bma=\dfrac{F_\bma+d_i}{n}=\dfrac{d_i}{n-1}$, то есть $F_\bma$ одноточечно.\\
+
+(iii {\bf b}) Наконец, рассмотрим случай, когда $G_{\bma\bma}=\0$ и существует $\bmb\sqsupset\bma$ такое, что $\#F_\bmb\cdot\#G_{\bma\bmb}\geq1$.
+При $G_{\bma\bma}=\0$ может существовать не более одного $\bmb\sqsupset\bma$ такого, что $F_\bmb\neq\0$, ведь иначе $G_{\bma\bma}\geq2$.
+Поскольку $\#F_\bmb=1$, то $F_\bma=\dfrac{F_\bmb+G_{\bma\bmb}}{n}$ конечно, а говоря точнее, $\#F_\bma=\#G_{\bma\bmb}$.
 \end{proof}
 
+\begin{corollary}\label{onepoint} 
+Если $F_\bma$ конечно, то  $\#F_\bma=\#G_{\bma\bmb}\leq\left\lfloor\dfrac{n-2}{2}\right\rfloor$.
+\hfill\qed
+\end{corollary}
+
+Далее будет доказано, что фрактальный квадрат, являющийся дендритом, обладает свойством одноточечного пересечения.
+Поэтому выделим случаи, при которых $F_\bma$ одноточечно:
 
 \begin{corollary}\label{onepoint} 
 Множество $F_\bma$ одноточечно, если \\
-\textbf{(a)} $\#G_{\bma\bma}=1$ и $\#F_\bmb\cdot\#G_{\bma\bmb}=0$ для $\bmb\sqsupset\bma$; или\\
-\textbf{(b)} $\#G_{\bma\bma}=0$ и $\#F_\bmb\cdot\#G_{\bma\bmb}=1$ для $\bmb\sqsupset\bma$. 
+\textbf{(a)} $\#G_{\bma\bma}=1$ и $\#F_\bmb\cdot\#G_{\bma\bmb}=0$ для каждого $\bmb\sqsupset\bma$; или\\
+\textbf{(b)} $\#G_{\bma\bma}=0$ и существует $\bmb\sqsupset\bma$ такое, что $\#F_\bmb\cdot\#G_{\bma\bmb}=1$.
 \hfill\qed
 \end{corollary}
 
