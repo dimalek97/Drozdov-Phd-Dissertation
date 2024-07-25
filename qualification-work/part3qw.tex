@@ -157,10 +157,10 @@ F_\bma=\bigcup\limits_{\bmb\sqsupseteq\bma} \dfrac{F_\bmb+G_{\bma\bmb}}{n}
 \begin{proof}
 По Определению \ref{def-falpha},
 \begin{equation}\label{line}
- nF_\bma=nK_\bma \cap (nK_{-\bma}+n\bma)= 
- \bigcup\limits_{d_1,d_2\in D}(K+d_1)\cap (K+d_2+n\bma).
- \end{equation}
-Из $(K+d_1)\cap (K+d_2+n\bma)\neq\0$ следует, что $d_2-d_1+n\bma=\bmb$ для некоторого $\bmb\in A$.
+nF_\bma=nK_\bma \cap (nK_{-\bma}+n\bma)= 
+\bigcup\limits_{d_1,d_2\in D}(K+d_1)\cap (K+d_2+n\bma).
+\end{equation}
+Из соотношения $(K+d_1)\cap (K+d_2+n\bma)\neq\0$ следует, что $d_2-d_1+n\bma=\bmb$ для некоторого $\bmb\in A$.
 
 Рассматривая $i$-ю координату в последнем равенстве, мы получаем
 $$d_{2i}-d_{1i}+n\al_i=\be_i.$$ 
@@ -175,8 +175,7 @@ $$d_{2i}-d_{1i}+n\al_i=\be_i.$$
 %Если в $\bma$ одна из координат равна $0$, то есть $P_\bma$ --- ребро квадрата $P$, то существует три таких $\bmb$, что $\bmb\sqsupseteq\bma$
 % Если $\bma$ --- индекс ребра, то существует три таких $\bmb$, что $\bmb\sqsupseteq\bma$.
 Равенство $d_1=d_2+n\bma-\bmb$ показывает, что $d_1$ принадлежит множеству $D\cap(D+n\bma-\bmb)$, которое мы обозначим через $G_{\bma\bmb}$.\\
-Для каждого $d_1\in G_{\bma\bmb}$ верно $(K+d_1)\cap (K+d_2+n\bma)= (K\cap(K+\bmb))+d_1= F_\bmb+d_1$.
-Последнее равенство показывает, что $nF_\bma= \bigcup\limits_{\bmb\sqsupseteq\bma} {F_\bmb+G_{\bma\bmb}}$.
+Для каждого $d_1\in G_{\bma\bmb}$ справедливы равенства $(K+d_1)\cap (K+d_2+n\bma)= (K\cap(K+\bmb))+d_1= F_\bmb+d_1$, из которых следует, что $nF_\bma= \bigcup\limits_{\bmb\sqsupseteq\bma} {F_\bmb+G_{\bma\bmb}}$.
 \end{proof}
 
 
