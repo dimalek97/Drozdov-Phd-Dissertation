@@ -105,7 +105,7 @@ $$P_\bma=P\cap(P+\bma)=((P-\bma)\cap P)+\bma=P_{-\bma}+\bma.$$
 
 \begin{proof}
 Заметим, что $n(K\cap P_\bma)=(K+D)\cap nP_\bma.$ 
-Для любого $d_i\in D$ если $d_i\notin(n-1)P_\bma$ то множество $(d_i+K)\cap nP_\bma$.
+Для любого $d_i\in D$ если $d_i\notin(n-1)P_\bma$, то множество $(d_i+K)\cap nP_\bma$.
 Поэтому $d_i\in D\cap (n-1)P_\bma$. 
 При этом $(d_i+K)\cap nP_\bma=d_i+K_\bma$, следовательно $n K_\bma={K_\bma+D_\bma}$.
 \end{proof}
@@ -127,7 +127,7 @@ $$K_\bi\cap K_\bj=\dfrac{d_\bi+F_\bma}{n^k}.$$
 $$K\cap(K+\bma)= K_\bma\cap (K_{-\bma}+\bma)=F_\bma=F_{-\bma}+\bma.$$
 
 2. Заметим, что $S_\bi^{-1}(K_\bi\cap K_\bj)=K\cap S_\bi^{-1}(K_\bj)=K\cap (K+d_\bj-d_\bi)$. 
-Поскольку по Определению \ref{refin} верно $d_\bj-d_\bi\in\zz^k$, то последние два квадрата смежны только в том случае, если $d_\bj-d_\bi$ равно некоторому $\bma\in A$. 
+Так как $d_\bj-d_\bi\in\zz^k$ по Определению \ref{refin}, последние два квадрата смежны только в том случае, если $d_\bj-d_\bi$ равно некоторому $\bma\in A$. 
 В этом случае $K\cap(K+d_\bj-d_\bi)=F_\bma$.
 Значит $K_\bi\cap K_\bj= S_\bi(F_\bma)= \dfrac{d_\bi+F_\bma}{n^k}$. 
 \end{proof}
@@ -136,20 +136,20 @@ $$K\cap(K+\bma)= K_\bma\cap (K_{-\bma}+\bma)=F_\bma=F_{-\bma}+\bma.$$
 Любое из этих пересечений является образом множества $F_{10}, F_{01}, F_{11}$ или $ F_{-1,1}$ относительно некоторого отображения $S_\bi$. 
 Множества $F_{11}$ и $ F_{-1,1}$ соответствуют пересечениям противоположных углов, а потому являются одноточечными или пустыми. 
 
-Для любых $i,j\in\{-1,1\}$ множество $F_{ij}$ является точкой $\{(i,j)\}$ если $(n-1)\cdot\left(\frac{i+1}{2},\frac{j+1}{2}\right)\in D_1$ и $(n-1)\cdot\left(\frac{-i+1}{2},\frac{-j+1}{2}\right)\in D_2$, в противном случае оно пусто. 
+Для любых $i,j\in\{-1,1\}$ множество $F_{ij}=\left(\frac{i+1}{2},\frac{j+1}{2}\right)$, если $(n-1)\cdot\left(\frac{i+1}{2},\frac{j+1}{2}\right)\in D_1$ и $(n-1)\cdot\left(\frac{-i+1}{2},\frac{-j+1}{2}\right)\in D_2$, в противном случае $F_{ij}=\0$. 
 
-Множества $F_{10}, F_{01}$ соответствуют вертикальной и горизонтальной смежности копий. 
-Эти множества являются пересечением противоположных сторон фрактального квадрата $K$, которые представляют из себя фрактальные отрезки.
+Множества $F_{10}, F_{01}$ соответствуют вертикальному и горизонтальному соседству копий. 
+Эти множества являются пересечением противоположных сторон фрактального квадрата $K$.
+%, которые представляют из себя фрактальные отрезки.
 
 Уравнения для множеств $F_\bma$ получаются из следующей теоремы.
 
 \begin{theorem}\label{thm:falpha}
 Для $\bma\in A\mmm\{0\}$ множество $F_\bma$ удовлетворяет уравнению
 \begin{equation}\label{sideint}
- F_\bma=\bigcup\limits_{\bmb\sqsupseteq\bma} \dfrac{F_\bmb+G_{\bma\bmb}}{n}
- \end{equation}
-где 
-$G_{\bma\bmb}=D_\bma\cap(D_{-\bma}+n\bma-\bmb)$.
+F_\bma=\bigcup\limits_{\bmb\sqsupseteq\bma} \dfrac{F_\bmb+G_{\bma\bmb}}{n}
+\end{equation}
+где $G_{\bma\bmb}=D_\bma\cap(D_{-\bma}+n\bma-\bmb)$.
 \end{theorem}
 
 Множество $G_{\bma\bma}=D_\bma\cap(D_{-\bma}+(n-1)\bma)$ мы для удобства обозначим как $G_{\bma}$.
