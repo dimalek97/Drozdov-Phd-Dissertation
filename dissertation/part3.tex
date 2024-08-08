@@ -469,13 +469,9 @@ $\#F_{(-1,0)}=\#F_{(0,-1)}=2$ и $\#F_0=\#F_{(-1,0)}\cdot\#G_{0(-1,0)}+\#F_{(0,-
 Фрактальный $k$-куб $K$ является множеством с одноточечным пересечением, если для каждого $\bma\succ0$ множество $F_\bma$ одноточечно.
 \end{corollary}
 
-<<<<<<< Updated upstream
-Согласно теореме \ref{thm:fpden}, самоподобное множество с одноточечным пересечением является дендритом, если его двудольный граф пересечений является деревом.
-Во фрактальном $k$-кубе $K$ каждой копии $K_{(d)}$ соответсвует единственное $d\in D$, поэтому в двудольном графе пересечений $\hat\Gamma$ мы можем рассматривать векторы из множества единиц в качестве белых вершин графа $\hat\Gamma$.
-=======
+
 Согласно теореме \ref{thm:fpden}, самоподобное множество с одноточечным пересечением является дендритом, если его двудольный граф пересечений $\hat\Gamma$ является деревом.
 Построим граф $\hat\Gamma$ для фрактального $k$-куба с одноточечным пересечением.
->>>>>>> Stashed changes
 
 Во фрактальном $k$-кубе $K$ каждой копии $K_{(d)}$ соответсвует единственное $d\in D$, поэтому в двудольном графе пересечений $\hat\Gamma$ мы можем рассматривать вектора из множества единиц в качестве белых вершин графа $\hat\Gamma$.
 Пусть $A_D=\{\bma\in A\mmm\{0\}\ :\ F_\bma\neq\0,\ G_{0\bma}\neq\0\}$.
@@ -496,26 +492,27 @@ $\#F_{(-1,0)}=\#F_{(0,-1)}=2$ и $\#F_0=\#F_{(-1,0)}\cdot\#G_{0(-1,0)}+\#F_{(0,-
 \end{theorem}
 
 \begin{proof}
-It is clear that $K_{(d)}\cap K_{(d+\bma)}=\dfrac{F_\bma+d}{n}$ и $K_{(d)}\cap K_{(d+\bmb)}=\dfrac{F_\bmb+d}{n}$.
-The equality $F_\bma=F_\bmb,$ implies 
+Очевидно, что $K_{(d)}\cap K_{(d+\bma)}=\dfrac{F_\bma+d}{n}$ и $K_{(d)}\cap K_{(d+\bmb)}=\dfrac{F_\bmb+d}{n}$.
+Из равенства $F_\bma=F_\bmb$ следует, что
 $$K_{(d)}\cap K_{(d+\bma)}=K_{(d)}\cap K_{(d+\bmb)}=\dfrac{F_\bmb+d}{n}=\dfrac{F_\bma+d}{n}=\{x\},$$
-therefore $K_{(d)}\cap K_{(d+\bma)}\cap K_{(d+\bmb)}=\{x\}.$
+то есть $K_{(d)}\cap K_{(d+\bma)}\cap K_{(d+\bmb)}=\{x\}.$
 
-Therefore, the white vertices corresponding to $K_{(d)}, K_{(d+\bma)}, K_{(d+\bmb)}$ are connected to the same single black vertex $p$ corresponding to the point $x$.
+Значит в двудольном графе пересечений $\hat\Gamma$ белые вершины, соответствующие копиям $K_{(d)}, K_{(d+\bma)}, K_{(d+\bmb)}$, соединены с одной и той же единственной черной вершиной, соответствующей точке $x$.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=.75\textwidth]{FSD_ord3_SSB.pdf}
-    \caption{A triple of copies with unique intersection point and a triple of copies forming a cycle.}
+    \caption{Тройка копий с общей точкой (обведены красной линией) и тройка копий, образубщих в $\hat\Gamma$ цикл (копии обведены синий линией)}
     \label{fig:triple}
 \end{figure}
 
-On the other hand, if $d, d-\bma, d-\bmb\in D$ then the intersection points are different. 
+При этом тройка копий $K_{(d)}, K_{(d-\bma)}, K_{(d-\bmb)}$ попарно пересекаются в трёх различных точках.
 $$  K_{(d)}\cap K_{(d-\bma)}=\dfrac{F_\bma+(d-\bma)}{n};\;
     K_{(d)}\cap K_{(d-\bmb)}=\dfrac{F_\bma+(d-\bmb)}{n};$$
-$$  K_{(d-\bma)}\cap K_{(d-\bmb)}=\dfrac{F_{\bma-\bmb}+(d-\bma)}{n}=\dfrac{F_{\bmb-\bma}+(d-\bmb)}{n}$$
+$$  K_{(d-\bma)}\cap K_{(d-\bmb)}=\dfrac{F_{\bma-\bmb}+(d-\bma)}{n}=\dfrac{F_{\bmb-\bma}+(d-\bmb)}{n}.$$
+Следовательно, белые вершины, соответствующие $K_{(d)}, K_{(d-\bma)}, K_{(d-\bmb)}$, образуют в $\hat\Gamma$ цикл, состоящий из трёх белых и трёх черных точки.
 
-Therefore, the white vertices corresponding to $K_{(d)}, K_{(d+\bma)}, K_{(d+\bmb)}$ form a cycle consisting of 3 white and 3 black points in the graph $\Gamma$.
+Копии в тройках $\{K_{(d)}, K_{(d-\bma)}, K_{(d+\bmb)\}}$ и $\{K_{(d)}, K_{(d+\bma)}, K_{(d-\bmb)\}}$ также попарно пересекаются по разным множествам или вовсе не пересекаются.
 \end{proof}
 
 \begin{corollary}\label{mpoint}
