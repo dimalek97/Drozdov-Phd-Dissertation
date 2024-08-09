@@ -179,7 +179,7 @@ F_{\bma}=K^1_\bma\cap(K^2_{-\bma}+\bma)=K^1\cap(K^2+\bma)
 
 \begin{theorem}\label{IFC}
 Пусть $K^1$ и $K^2$ --- фрактальные $k$-кубы порядка $n$ с множествами единиц $D^1$ и $D^2$.
-Семейство множеств $\{F_\bma=K^1_{\bma}\cap(K^2_{-\bma}+\bma)\ :\ \bma\in A\}$ удовлетворяет системе уравнений
+Семейство множеств $\{F_\bma=K^1\cap(K^2+\bma)\ :\ \bma\in A\}$ удовлетворяет системе уравнений
 \begin{equation}\label{sideint}
 \Sigma=\left\{
 F_\bma=\bigcup\limits_{\bmb\sqsupseteq\bma} \dfrac{F_\bmb+G_{\bma\bmb}}{n}\ :\ \bma\in A\right\},
@@ -191,18 +191,17 @@ F_\bma=\bigcup\limits_{\bmb\sqsupseteq\bma} \dfrac{F_\bmb+G_{\bma\bmb}}{n}\ :\ \
 
 \begin{proof}
 %Поскольку $P\cap (P+\bma)=P_\bma=P_{-\bma}+\bma$, то справедлива цепочка равенств
-Согласно \eqref{eq:fbma}, справедлива цепочка равенств
+Справедлива цепочка равенств
 \begin{multline}\label{line}
-nF_\bma=nK^1_\bma\cap (nK^2_{-\bma}+n\bma)=nK^1\cap(nK^2+n\bma)=\\
-=(K^1+D^1)\cap(K^2+D^2+n\bma)=
-\bigcup\limits_{d_1\in D^1,\ d_2\in D^2}(K^1+d_1)\cap (K^2+d_2+n\bma).
+nF_\bma=nK^1\cap(nK^2+n\bma)=(K^1+D^1)\cap(K^2+D^2+n\bma)=\\
+=\bigcup\limits_{d_1\in D^1,\ d_2\in D^2}(K^1+d_1)\cap (K^2+d_2+n\bma).
 \end{multline}
 Из соотношения $(K^1+d_1)\cap (K^2+d_2+n\bma)\neq\0$ следует, что \\
 $d_2-d_1+n\bma=\bmb$ для некоторого $\bmb\in A$.
 
 Рассматривая $i$-ю координату в последнем равенстве, мы получаем
 $$d_{2i}-d_{1i}+n\al_i=\be_i.$$ 
-Из того, что $\al_i,\be_i\in\{-1,0,1\}$ и $|d_{2i}-d_{1i}|\le n-1$ вытекают следующие утверждения.
+Из того, что $\al_i,\be_i\in\{-1,0,1\}$ и $|d_{2i}-d_{1i}|\le n-1$, вытекают следующие утверждения.
 
 \begin{itemize}[nolistsep]
  \item[(i)] Если $\al_i=1$, то $\be_i>0$, а значит, $\be_i=\al_i$ и $d_{2i}-d_{1i}=n-1$.
@@ -213,10 +212,10 @@ $$d_{2i}-d_{1i}+n\al_i=\be_i.$$
 
 Из утверждений (i), (ii) и (iii) следует что $\bmb\sqsupseteq\bma$.
 
-Равенство $d_1=d_2+n\bma-\bmb$ показывает, что $d_1$ принадлежит множеству $D^1\cap(D^2+n\bma-\bmb)$, которое мы обозначили как $G_{\bma\bmb}$.
+Равенство $d_1=d_2+n\bma-\bmb$ показывает, что $d_1$ принадлежит множеству $D^1\cap(D^2+n\bma-\bmb)=D^1_\bma\cap(D^2_{-\bma}+n\bma-\bmb)$, которое мы обозначили как $G_{\bma\bmb}$.
 Каждое $d_1\in G_{\bma\bmb}$ задаёт единственное $d_2$ и для них справедливы равенства 
-$$(K^1+d_1)\cap (K^2+d_2+n\bma)= (K^1\cap(K^2+\bmb))+d_1= F_\bmb+d_1,$$ 
-из которых следует, что $nF_\bma= \bigcup\limits_{\bmb\sqsupseteq\bma} (F_\bmb+G_{\bma\bmb})$.
+$$(K^1+d_1)\cap (K^2+d_2+n\bma)= (K^1\cap(K^2+\bmb))+d_1= F_\bmb+d_1.$$ 
+Если мы возьмём объединение по всем $d_1\in G_{\bma\bmb}$, то \eqref{line} превратится в $nF_\bma= \bigcup\limits_{\bmb\sqsupseteq\bma} (F_\bmb+G_{\bma\bmb})$.
 \end{proof}
 
 %\begin{theorem}\label{IFC}
