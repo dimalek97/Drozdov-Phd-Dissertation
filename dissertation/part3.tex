@@ -192,9 +192,15 @@ F_\bma=\bigcup\limits_{\bmb\sqsupseteq\bma} \dfrac{F_\bmb+G_{\bma\bmb}}{n}\ :\ \
 \begin{proof}
 %Поскольку $P\cap (P+\bma)=P_\bma=P_{-\bma}+\bma$, то справедлива цепочка равенств
 Справедлива цепочка равенств
-\begin{multline}\label{line}
-nF_\bma=nK^1\cap(nK^2+n\bma)=(K^1+D^1)\cap(K^2+D^2+n\bma)=\\
-=\bigcup\limits_{d_1\in D^1,\ d_2\in D^2}(K^1+d_1)\cap (K^2+d_2+n\bma).
+\begin{equation}\label{line}
+\begin{split}
+nF_\bma &= nK^1\cap(nK^2+n\bma)=(K^1+D^1)\cap(K^2+D^2+n\bma)=\\
+        &= \bigcup\limits_{d_1\in D^1,\ d_2\in D^2}(K^1+d_1)\cap (K^2+d_2+n\bma).
+\end{split}
+\end{equation}
+
+\begin{multline}
+
 \end{multline}
 Из соотношения $(K^1+d_1)\cap (K^2+d_2+n\bma)\neq\0$ следует, что \\
 $d_2-d_1+n\bma=\bmb$ для некоторого $\bmb\in A$.
@@ -215,7 +221,7 @@ $$d_{2i}-d_{1i}+n\al_i=\be_i.$$
 Равенство $d_1=d_2+n\bma-\bmb$ показывает, что $d_1$ принадлежит множеству $D^1\cap(D^2+n\bma-\bmb)=D^1_\bma\cap(D^2_{-\bma}+n\bma-\bmb)$, которое мы обозначили как $G_{\bma\bmb}$.
 Каждое $d_1\in G_{\bma\bmb}$ задаёт единственное $d_2$ и для них справедливы равенства 
 $$(K^1+d_1)\cap (K^2+d_2+n\bma)= (K^1\cap(K^2+\bmb))+d_1= F_\bmb+d_1.$$ 
-Если мы возьмём объединение по всем $d_1\in G_{\bma\bmb}$, то \eqref{line} превратится в $nF_\bma= \bigcup\limits_{\bmb\sqsupseteq\bma} (F_\bmb+G_{\bma\bmb})$.
+Если мы возьмём объединение по всем $d_1\in G_{\bma\bmb}$, то равенство \eqref{line} превратится в $nF_\bma= \bigcup\limits_{\bmb\sqsupseteq\bma} (F_\bmb+G_{\bma\bmb})$.
 \end{proof}
 
 %\begin{theorem}\label{IFC}
