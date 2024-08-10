@@ -138,7 +138,7 @@ $$P_\bma=\left\{x=(x_1,\ldots,x_k)\ :\ x_i=\frac{\al_i+1}{2} \text{ при } \al
 
 \subsection{Пересечения $F_\al$ граней фрактальных $k$-кубов}
 
-Пусть $K^1$ и $K^2$ --- фрактальные $k$-кубы порядка $n$ с множествами единиц $D^1$ и $D^2$.
+Пусть в дальнейшем $K^1$ и $K^2$ --- фрактальные $k$-кубы порядка $n$ с множествами единиц $D^1$ и $D^2$.
 
 \begin{definition}\label{def:F_alpha}
 %Пусть даны фрактальные $k$-кубы $K^1$ и $K^2$.
@@ -173,7 +173,7 @@ $$P_\bma=\left\{x=(x_1,\ldots,x_k)\ :\ x_i=\frac{\al_i+1}{2} \text{ при } \al
 
 Из $P\cap (P+\bma)=P_\bma=P_{-\bma}+\bma$ следует, что 
 \begin{equation}\label{eq:fbma}
-F_{\bma}=K^1_\bma\cap(K^2_{-\bma}+\bma)=K^1\cap(K^2+\bma)
+F_{\bma}=K^1_\bma\cap(K^2_{-\bma}+\bma)=K^1\cap(K^2+\bma).
 \end{equation}
 
 %При $|\bma|=k$ множество $F_{\bma}=\left(\frac{\al_1+1}{2},\ldots,\frac{\al_k+1}{2}\right)$, если $(n-1)\cdot\left(\frac{\al_1+1}{2},\ldots,\frac{\al_k+1}{2}\right)\in D^1$ и $(n-1)\cdot\left(\frac{-\al_1+1}{2},\ldots,\frac{-\al_k+1}{2}\right)\in D^2$, в противном случае $F_{\bma}=\0$. 
@@ -182,11 +182,14 @@ F_{\bma}=K^1_\bma\cap(K^2_{-\bma}+\bma)=K^1\cap(K^2+\bma)
 Уравнения, задающие множества $F_\bma$, получаются из следующей теоремы.
 
 \begin{theorem}\label{IFC}
-Пусть $K^1$ и $K^2$ --- фрактальные $k$-кубы порядка $n$ с множествами единиц $D^1$ и $D^2$.
-Семейство множеств $\{F_\bma=K^1\cap(K^2+\bma)\ :\ \bma\in A\}$ удовлетворяет системе уравнений
+%Пусть $K^1$ и $K^2$ --- фрактальные $k$-кубы порядка $n$ с множествами единиц $D^1$ и $D^2$.
+Семейство множеств $\{F_\bma=K^1\cap(K^2+\bma)\ :\ \bma\in A\}$ удовлетворяет системе уравнений 
 \begin{equation}\label{sideint}
-\Sigma=\left\{
-F_\bma=\bigcup\limits_{\bmb\sqsupseteq\bma} \dfrac{F_\bmb+G_{\bma\bmb}}{n}\ :\ \bma\in A\right\},
+%\left\{
+F_\bma=\bigcup\limits_{\bmb\sqsupseteq\bma} 
+\dfrac{F_\bmb+G_{\bma\bmb}}{n},
+%\ \text{ где } \bma\in A,
+%\right\}
 \end{equation}
 где $G_{\bma\bmb}=D^1\cap(D^2+n\bma-\bmb)$.
 \end{theorem}
