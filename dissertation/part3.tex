@@ -270,7 +270,7 @@ $\#G_{\bma_0\bma_1}\cdot\#G_{\bma_1\bma_2}\cdot\ldots\cdot\#G_{\bma_{p-1}\bma_p}
 \qed
 \end{lemma} 
 
-Отношения между множествами $F_\bma$, установленные в теореме \ref{IFC}, приводят к {\em структурному графу $\Ga_\Sa$} системы $\Sa$. 
+Отношения между множествами $F_\bma$, установленные в теореме \ref{IFC}, описываются {\em структурным графом $\Ga_\Sa$} системы $\Sa$. 
 
 \begin{definition}
 Структурным графом $\Ga_\Sa$ называется отмеченный ориентированный граф с множеством вершин $\{\bma\in A\ :\ F_\bma\neq\0\}$ и множеством рёбер $\{(\bma, \bmb)\ :\ \bma\sqsubseteq\bmb, G_{\bma\bmb}\neq\0, F_\bmb\neq\0\}$, где ребро $(\bma, \bmb)$ направлено из $\bma$ в $\bmb$ и отмечено $G_{\bma\bmb}$.
@@ -292,16 +292,16 @@ $\#G_{\bma_0\bma_1}\cdot\#G_{\bma_1\bma_2}\cdot\ldots\cdot\#G_{\bma_{p-1}\bma_p}
 
 
 \begin{definition}
-Мы говорим, что в граф $\Ga_\Sa$  содержит  {\em направленный путь от $\bma$ до $\bmb$}, если 
+Мы говорим, что в граф $\Ga_\Sa$  содержит  {\em направленный путь из $\bma$ в $\bmb$}, если 
 \begin{itemize}[nolistsep]
-\item[1.] $\bma\sqsubset\bmb$ и существует последовательность $\bma=\bma_0\sqsubset\bma_1\sqsubset\ldots\sqsubset\bma_{p-1}\sqsubset\bma_p=\bmb$ такая, что для любых  $j=0, \ldots, p$ множества $F_{\bma_j}\neq\0$  и  $G_{\bma_{j-1}\bma_j}\neq\0$ для $j=1, \ldots, p$; либо
+\item[1.] $\bma\sqsubset\bmb$ и существует цепочка $\bma=\bma_0\sqsubset\bma_1\sqsubset\ldots\sqsubset\bma_{p-1}\sqsubset\bma_p=\bmb$ такая, что $F_{\bma_0}\neq\0$ и для любых  $j=1, \ldots, p$ множества $F_{\bma_j}\neq\0$  и  $G_{\bma_{j-1}\bma_j}\neq\0$; либо
 \item[2.] $\bma=\bmb$ и  $G_{\bma}\neq\0$.
 \end{itemize}
 Мы пишем $\bmb\succcurlyeq\bma$, если  $\Ga_\Sa$ содержит направленный путь от $F_\bma$ до $F_\bmb$, и $\bmb\succ\bma$, если при этом $\bma\neq\bmb$.
 \end{definition}
  
 %Если $\bmb\succcurlyeq\bma$ или $\bma\succcurlyeq\bmb$, то мы говорим, что $\bma$ и $\bmb$ являются $\Ga${\em-сравнимы}.
-Мы обозначим через $\Ga_\bma$ подграф в $\Ga_\Sa$, все вершины которого являются $\bmb$ такими, что $\bmb\succcurlyeq\bma$. 
+Мы обозначим через $\Ga_\bma$ подграф в $\Ga_\Sa$с множеством вершин $\{\bmb\ :\ \bmb\succcurlyeq\bma\}$. 
 Если структурный граф $\Ga_\Sa$ несвязен, то $\Ga_0$ --- это та компонента графа $\Ga_\Sa$, которая содержит вершину $0$.\\
 Мы говорим, что $\bmb$ является {\em максимальным} для $\Ga_\bma$, если $\bmb$ является единственной вершиной в $\Ga_\bmb$.
 Мы говорим, что $\bmb$ является {\em минимальным} для $\Ga_\bma$, если в $\Ga_\bma$ нет $\bma$ такого, что $\bma\prec\bmb$.
