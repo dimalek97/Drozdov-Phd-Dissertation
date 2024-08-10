@@ -195,6 +195,9 @@ F_\bma=\bigcup\limits_{\bmb\sqsupseteq\bma}
 \end{theorem}
 
 Множество $G_{\bma\bma}=D^1\cap(D^2+(n-1)\bma)$ мы обозначим как $G_{\bma}$.
+Введём для $\bmb\sqsupseteq\bma$ оператор $T_{\bma\bmb}(x) = \dfrac{x+G_{\bma\bmb}}{n}$.
+Тогда формула \eqref{sideint} представима в виде 
+$$F_{\bma} = T_{\bma\bma}(F_\bma) \cup \bigcup_{\bmb\sqsupset\bma}T_{\bma\bmb}(F_\bmb).$$
 
 \begin{proof}
 %Поскольку $P\cap (P+\bma)=P_\bma=P_{-\bma}+\bma$, то справедлива цепочка равенств
@@ -329,17 +332,17 @@ $\#G_{\bma_0\bma_1}\cdot\#G_{\bma_1\bma_2}\cdot\ldots\cdot\#G_{\bma_{p-1}\bma_p}
 \item[(2b)] Если при этом существует $\bmb'\succ\bmb$ такое, что $\#G_\bmb=1$ и $F_{\bmb'}\neq\0$, то $F_\bma$ счетно.
 
 \item[(3)] Если  $\#G_\bmb=1$ для всех максимальных вершин $\bmb$ в $\Gamma_\bma$, и $G_{\bma_i}=\0$ для всех остальных вершин $\bma_i$ в $\Gamma_\bma$, то $F_\bma$ конечно.
-В этом случае $\#F_\bma$ не превосходит сумму   композиций $\prod \limits_{j=1}^{p-1}\# G_{\bma_j\bma_{j+1}}$, взятых по всем цепочкам $\bma=\bma_1\prec\ldots\prec\bma_p=\bmb$, где $\bmb$  максимален в $\Gamma_\bma$.
+В этом случае $\#F_\bma$ не превосходит сумму произведений $\prod \limits_{j=1}^{p-1}\# G_{\bma_j\bma_{j+1}}$, взятых по всем цепочкам $\bma=\bma_1\prec\ldots\prec\bma_p=\bmb$, где $\bmb$  максимальна в $\Gamma_\bma$.
 
-\item[(4)] Если все $\bma_i\succcurlyeq\bma$ образуют единственную цепочку $\bma=\bma_1\prec\ldots\prec\bma_p$, в которой  $\# G_{\bma_j\bma_{j+1}}=1$, $G_{\bma_j}=\0$ и $\#G_{\bma_p}=1$ для всех $j\le p-1$, то  $\#F_\bma=1$.
+\item[(4)] Если все $\bma_i\succcurlyeq\bma$ образуют единственную цепочку $\bma=\bma_1\prec\ldots\prec\bma_p$, в которой $G_{\bma_j}=\0$ и $\# G_{\bma_j\bma_{j+1}}=1$, $\#G_{\bma_p}=1$ для всех $j\le p-1$, то $\#F_\bma=1$.
 \end{enumerate}
 \end{theorem}
 
 
 \begin{proof}
-Введём для $\bmb\sqsupseteq\bma$ обозначение $T_{\bma\bmb}(x) = \dfrac{x+G_{\bma\bmb}}{n}$.
-Тогда формула \eqref{sideint} представима в виде 
-$$F_{\bma} = T_{\bma\bma}(F_\bma) \cup \bigcup_{\bmb\sqsupset\bma}T_{\bma\bmb}(F_\bmb).$$
+%Введём для $\bmb\sqsupseteq\bma$ обозначение $T_{\bma\bmb}(x) = \dfrac{x+G_{\bma\bmb}}{n}$.
+%Тогда формула \eqref{sideint} представима в виде 
+%$$F_{\bma} = T_{\bma\bma}(F_\bma) \cup \bigcup_{\bmb\sqsupset\bma}T_{\bma\bmb}(F_\bmb).$$
 
 (1) 
 Если $\#G_{\bmb}> 1$, то $F_\bmb$ содержит в себе фрактальный $k$-куб с множеством единиц $G_{\bmb}$, а значит, $F_\bmb$ имеет мощность континуума.
