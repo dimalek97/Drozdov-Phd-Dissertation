@@ -342,54 +342,54 @@ $A_i$ -- общая вершина для $P$ и $S_i(P)$, причём $S_i(A_i
 
 
 \begin{frame}{}
-\Huge{Фрактальные квадраты с конечным пересечением}
+\Huge{Фрактальные $k$-кубы, являющиеся дендритами}
 \end{frame}
 
-\begin{frame}{История вопроса}
-\begin{itemize}
-    \item[(1)] T. Bedford (1984); C. McMullen (1984) --- самоаффинные ковры Бедфорда-МакМаллена;
-    \item[(2)] Y. Peres (1994) --- условия, при которых мера ковров Бедфорда-МакМаллена несчётно-бесконечна;
-    \item[(3)] R. Kenyon, Y. Peres (1996) --- размерность и мера губок Серпинского;
-    \item[(4)] K. Lau, J.J. Luo, H. Rao (2013) --- топологические свойства замощений плоскости фрактальными квадратами;
-    \item[(5)] L. L. Cristea, B. Steinsky (2009, 2011, 2017, 2020) --- дуги во фрактальных квадратах и треугольниках;
-    \item[(6)] J. M. Fraser (2021) --- обзор по фрактальнм размерностям губок Серпинского;
-\end{itemize}
-\end{frame}
+%\begin{frame}{История вопроса}
+%\begin{itemize}
+%    \item[(1)] T. Bedford (1984); C. McMullen (1984) --- самоаффинные ковры Бедфорда-МакМаллена;
+%    \item[(2)] Y. Peres (1994) --- условия, при которых мера ковров Бедфорда-МакМаллена несчётно-бесконечна;
+%    \item[(3)] R. Kenyon, Y. Peres (1996) --- размерность и мера губок Серпинского;
+%    \item[(4)] K. Lau, J.J. Luo, H. Rao (2013) --- топологические свойства замощений плоскости фрактальными квадратами;
+%    \item[(5)] L. L. Cristea, B. Steinsky (2009, 2011, 2017, 2020) --- дуги во фрактальных квадратах и треугольниках;
+%    \item[(6)] J. M. Fraser (2021) --- обзор по фрактальнм размерностям губок Серпинского;
+%\end{itemize}
+%\end{frame}
 
 
-\begin{frame}{Фрактальный квадрат}
+\begin{frame}{Фрактальные $k$-кубы}
 \only<1>{
-\begin{definition}[Lau K., Luo J.J.,Rao H. (2013)]
-Пусть $D=\{d_1,\ldots,d_m\}\IN\{0,1,\ldots,n-1\}^2$, где $n\ge 2$, и $1<m<n^2$.
-{\em Фрактальным квадратом} порядка $n$ с {\em множеством единиц $D$} называют компактное множество $K\IN\rr^2$, удовлетворяющее уравнению
-\begin{equation}\label{fsqeq}
+\begin{definition}[Olsen L. (1998) \cite{Olsen1998}; Lau K., Luo J.J.,Rao H. (2013) \cite{LLR2013}]
+\label{dfn:FQ}
+Пусть  $D=\{d_1,\ldots,d_r\},\; d_i\in\{0,1,\ldots,n-1\}^k$, где $n\ge 2$, а $1<\#D<n^k$.\\
+{\em Фрактальным $k$-кубом порядка $n$ с множеством единиц $D$} называют компактное множество $K\IN\rr^k$, удовлетворяющее равенству
+\begin{equation}\label{fqeq}
 K=\dfrac{K+D}{n}.
 \end{equation}
-\end{definition} 
-\footnotetext[5]{Lau K., Luo J.J.,Rao H., Topological structure of fractal squares, Math. Proc. Camb. Phil. Soc. 115 (2013), 73--86}
+\end{definition}
 }
 \only<2>{
-    \includegraphics[width=0.45\textwidth]{den3f1.png}
+    \includegraphics[width=0.4\textwidth]{FQD.png}
     \hfill
-    \includegraphics[width=0.45\textwidth]{den3f.png}
+    \includegraphics[width=0.4\textwidth]{FQK.png}
     % $$K=\dfrac{K+D}{n}=\bigcup_{i=1}^rS_i(K),\; \text{ где }\; S_i(x)=\frac{d_i+x}{n}\; \text{ и }\; \fix(S_i)=\frac{d_i}{n-1}.$$
     }
 \end{frame}
 
 
-\begin{frame}{Грани единичного квадрата}
+\begin{frame}{Грани единичного $k$-куба}
 \begin{columns}
 \column{0.5\textwidth}
 \includegraphics[width=\textwidth]{faces_p.pdf}
 \column{0.5\textwidth}
 \only<1>{
 \begin{definition}\label{dfn:Pa}
-Каждому вектору $\bma\in A=\{-1,0,1\}^2$ соответствует грань $P_\bma:=P\cap(P+\bma)$ единичного квадрата $P$.
+Каждому вектору $\bma\in A=\{-1,0,1\}^k$ соответствует грань $P_\bma:=P\cap(P+\bma)$ единичного $k$-куба $P$.
 \end{definition}}
 \only<2>{
-Введём отношение порядка $\sqsubseteq$ на $A$, равносильное отношению включения $\supseteq$ граней куба $P$:
+Введём отношение порядка $\sqsubseteq$ на $A$, равносильное отношению включения $\supseteq$ граней $k$-куба $P$:
 \begin{definition}\label{Aorder}
-Пусть $\bma=(\al_1,\al_2)$, $\bmb=(\be_1,\be_2)\in A$.
+Пусть $\bma=(\al_1,\ldots,\al_k)$, $\bmb=(\be_1,\be_2,\ldots,\be_k)\in A$.
 Будем говорить, что $\bma\sqsubseteq\bmb$, если из $\al_i\neq 0$ следует $\be_i=\al_i$.
 Если при этом $\bma\neq\bmb$, то $\bma\sqsubset\bmb$.
 \end{definition}}
@@ -398,54 +398,135 @@ K=\dfrac{K+D}{n}.
 \end{frame}
 
 
-\begin{frame}{Грани фрактального квадрата}
+\begin{frame}{Грани фрактального $k$-куба}
 \begin{definition}\label{def-falpha}
-Гранью $K_\bma$ фрактального квадрата $K$ называется множество $K\cap P_\bma$.
+Гранью $K_\bma$ фрактального $k$-куба $K$ называется множество $K\cap P_\bma$.
 \end{definition}
 
 \begin{proposition}\label{prop:Ka}
-Грань $K_\bma$ фрактального квадрата $K$ удовлетворяет уравнению $n K_\bma=K_\bma+D_\bma$, где $D_\bma=D\cap(n-1)P_\bma$.
+Грань $K_\bma$ фрактального $k$-куба $K$ удовлетворяет уравнению $n K_\bma=K_\bma+D_\bma$, где $D_\bma=D\cap(n-1)P_\bma$.
 \end{proposition}
 \end{frame}
 
 
-\begin{frame}{Основной результат:\\Теорема о пересечениях граней фрактальных квадратов}
-Символом $F_\bma$ обозначим пересечение $K_\bma\cap(K_{-\bma}+\bma)$ пары противоположных граней фрактального квадрата.
+\begin{frame}{Основной результат:\\Теорема о пересечениях граней фрактальных $k$-кубов }
+Пусть в дальнейшем $K^1$ и $K^2$ --- фрактальные $k$-кубы порядка $n$ с множествами единиц $D^1$ и $D^2$.
+Для любого $\bma\in A$ символом $F_\bma$ обозначим пересечение $K^1_\bma\cap(K^2_{-\bma}+\bma)$ пары граней фрактальных $k$-кубов $K^1$ и $K^2$.
 Уравнения, задающие множества $F_\bma$, получаются из следующей теоремы.
 
-\begin{theorem}\label{thm:falpha}
-Для $\bma\in A\mmm\{0\}$ множество $F_\bma$ удовлетворяет уравнению
+\begin{theorem}\label{IFC}
+Семейство множеств $\{F_\bma=K^1\cap(K^2+\bma)\ :\ \bma\in A\}$ удовлетворяет системе $\Sa$ уравнений 
 \begin{equation}\label{sideint}
-F_\bma=\bigcup\limits_{\bmb\sqsupseteq\bma} \dfrac{F_\bmb+G_{\bma\bmb}}{n}
+F_\bma=\bigcup\limits_{\bmb\sqsupseteq\bma} 
+\dfrac{F_\bmb+G_{\bma\bmb}}{n},
 \end{equation}
-где $G_{\bma\bmb}=D_\bma\cap(D_{-\bma}+n\bma-\bmb)$.
+где $G_{\bma\bmb}=D^1\cap(D^2+n\bma-\bmb)$.
 \end{theorem}
+Множество $G_{\bma\bma}=D^1\cap(D^2+(n-1)\bma)$ мы обозначим как $G_{\bma}$.
+\end{frame}
 
-%Множество $G_{\bma\bma}=D\cap(D+(n-1)\bma)$ мы для удобства обозначим как $G_{\bma}$.
+
+\begin{frame}{Структурный граф}
+\only<1>{
+\begin{lemma}
+Множество $F_\bma=\0$ тогда и только тогда, когда для любого $\bmb\sqsupseteq\bma$ и для любой цепочки $\bma=\bma_0\sqsubseteq\bma_1\sqsubseteq\ldots \bma_{p-1}\sqsubseteq\bma_p=\bmb$ произведение 
+$\#G_{\bma_0\bma_1}\cdot\#G_{\bma_1\bma_2}\cdot\ldots\cdot\#G_{\bma_{p-1}\bma_p}\cdot\#G_{\bmb}$ равно нулю. 
+\qed
+\end{lemma} 
+
+Отношения между множествами $F_\bma$, установленные в теореме \ref{IFC}, описываются {\em структурным графом $\Ga_\Sa$} системы $\Sa$. 
+
+\begin{definition}
+Структурным графом $\Ga_\Sa$ называется отмеченный ориентированный граф с множеством вершин $\{\bma\in A\ :\ F_\bma\neq\0\}$ и множеством рёбер $\{(\bma, \bmb)\ :\ \bma\sqsubseteq\bmb, G_{\bma\bmb}\neq\0, F_\bmb\neq\0\}$, где ребро $(\bma, \bmb)$ направлено из $\bma$ в $\bmb$ и отмечено $G_{\bma\bmb}$.
+\end{definition}}
+\only<2>{
+\center{
+\includegraphics[width=.6\textwidth]{structure_graph_full_new.pdf}}
+}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{definition}
+Мы говорим, что в граф $\Ga_\Sa$  содержит  {\em направленный путь из $\bma$ в $\bmb$}, если 
+\begin{itemize}[nolistsep]
+\item[1.] $\bma\sqsubset\bmb$ и существует цепочка $\bma=\bma_0\sqsubset\bma_1\sqsubset\ldots\sqsubset\bma_{p-1}\sqsubset\bma_p=\bmb$ такая, что $F_{\bma_0}\neq\0$ и для любых  $j=1, \ldots, p$ множества $F_{\bma_j}\neq\0$  и  $G_{\bma_{j-1}\bma_j}\neq\0$; либо
+\item[2.] $\bma=\bmb$ и  $G_{\bma}\neq\0$.
+\end{itemize}
+Мы пишем $\bmb\succcurlyeq\bma$, если  $\Ga_\Sa$ содержит направленный путь из $\bma$ в $\bmb$, и $\bmb\succ\bma$, если при этом $\bma\neq\bmb$.
+\end{definition}
+ 
+Обозначим через $\Ga_\bma$ подграф графа $\Ga_\Sa$ с множеством вершин $\{\bmb\ :\ \bmb\succcurlyeq\bma\}$.\\
+Если $\Ga_\Sa$ несвязен, то $\Ga_0$ есть компонента графа $\Ga_\Sa$, содержащая вершину $0$, в противном случае $\Ga_\Sa=\Ga_0$.\\
+Вершина $\bmb\succcurlyeq\bma$ является {\em максимальной} для $\Ga_\bma$, если $\bmb$ --- единственная вершина в $\Ga_\bmb$.
 \end{frame}
 
 
 \begin{frame}{Основной результат:\\Мощность множества $F_\bma$}
-\begin{theorem}\label{fin_int}
-Пусть $K$ --- фрактальный квадрат. Рассмотрим $F_\bma, \bma\in A\mmm\{0\}$.
-\begin{itemize}[nolistsep]
- \item[(i)] Если $\#G_{\bma\bma}> 1$, то множество $F_\bma$ несчётно.
- \item[(ii)] Если $\#G_{\bma\bma}=1$ и существует $\bmb\sqsupset\bma$ такое, что  $F_\bmb$ непусто и $\#G_{\bma\bmb}\geq1$, то $F_\bma$ бесконечное счётное.
- \item[(iii)] Множество $F_\bma$ конечно в следующих случаях:
- \begin{itemize}[nolistsep]
- \item[\textbf{(a)}] $\#G_{\bma\bma}=1$ и $\#F_\bmb\cdot\#G_{\bma\bmb}=0$ для каждого $\bmb\sqsupset\bma$;
- \item[\textbf{(b)}] $G_{\bma\bma}=\0$ и существует $\bmb\sqsupset\bma$ такое, что $\#F_\bmb\cdot\#G_{\bma\bmb}\geq1$.
- \end{itemize}
-\end{itemize} 
-\end{theorem}
-\begin{corollary}\label{onepoint} 
-Если $F_\bma$ конечно, то  $\#F_\bma=\#G_{\bma\bmb}\leq\left\lfloor\dfrac{n-2}{2}\right\rfloor$.
+\begin{theorem}
+\begin{enumerate}[nolistsep]
+\item[(1)] Если $\#G_\bmb>1$ для некоторого $\bmb\succcurlyeq\bma$, то  $F_\bma$ несчётно.
+
+\item[(2a)] Если  $\#G_\bmb\leq1$ для любого $\bmb\succcurlyeq\bma$, то  $F_\bma$ не более чем счетно.
+
+\item[(2b)] Если при этом существует $\bmb'\succ\bmb$ такое, что $\#G_\bmb=1$ и $F_{\bmb'}\neq\0$, то $F_\bma$ счетно.
+
+\item[(3)] Если  $\#G_\bmb=1$ для всех максимальных вершин $\bmb$ в $\Gamma_\bma$, и $G_{\bma_i}=\0$ для всех остальных вершин $\bma_i$ в $\Gamma_\bma$, то $F_\bma$ конечно.
+%В этом случае $\#F_\bma$ не превосходит сумму произведений $\prod \limits_{j=1}^{p-1}\# G_{\bma_j\bma_{j+1}}$, взятых по всем цепочкам $\bma=\bma_1\prec\ldots\prec\bma_p=\bmb$, где $\bmb$  максимальна в $\Gamma_\bma$.
+
+\item[(4)] Если все $\bma_i\succcurlyeq\bma$ образуют единственную цепочку $\bma=\bma_1\prec\ldots\prec\bma_p$, в которой $G_{\bma_j}=\0$ и $\# G_{\bma_j\bma_{j+1}}=1$, $\#G_{\bma_p}=1$ для всех $j\le p-1$, то $\#F_\bma=1$.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Пересечение двух фрактальных квадратов, состоящее из $24$ точек, и его структурный граф $\Ga_\Sa$}
+\includegraphics[width=0.6\textwidth]{FSI_6x6_DS_new.pdf}
+\hfill
+\includegraphics[width=.35\textwidth]{FSI_6x6_SG_new.pdf}
+\end{frame}
+
+\begin{frame}{}
+Далее будем полагать, что $K=K^1=K^2$, тогда $F_\bma=K_\bma\cap(K_{-\bma}+\bma)$.
+\begin{corollary}
+Фрактальный $k$-куб $K$ является множеством с одноточечным пересечением, если для каждого $\bma\succ0$ множество $F_\bma$ одноточечно.
 \end{corollary}
+\begin{theorem}
+Пусть $K=\dfrac{K+D}{n}$ фрактальный куб с одноточечным пересечением. 
+Если существуют неравные $\bma,\bmb\neq0$ такие, что $F_\bma=F_\bmb\neq\0$ и $G_{0\bma}\neq\0,\ G_{0\bmb}\neq\0$,  то для каждой тройки $d, d+\bma, d+\bmb\in D$ копии $K_{(d)},$ $K_{(d+\bma)}$ и $K_{(d+\bmb)}$ пересекаются по общей точке $\{x\}=\dfrac{F_\bma+d}{n}=\dfrac{F_\bmb+d}{n}$.
+\end{theorem}
+\end{frame}
+
+\begin{frame}
+\center{
+\includegraphics[width=.9\textwidth]{FSD_ord3_SSB.pdf}}
 \end{frame}
 
 
+\begin{frame}{Алгоритм проверки фрактального $k$-куба}
+
+Чтобы проверить, является ли фрактальный $k$-куб $K$ дендритом с одноточечным пересечением, нужно выполнить следующие шаги:
+
+\begin{enumerate}
+
+\item Найдём все множества $G_\bma, G_{\bma\bmb}$ и выпишем систему уравнений $\Sigma$.
+Если $F_0=\0$, то $K$ несвязен и не может быть дендритом.
+
+\item Построим для системы $\Sa$ её структурный граф $\Ga_\Sa$.
+Если граф $\Ga_\Sa$ несвязен, то рассматриваем подграф $\Ga_0$.
+ 
+\item Проверим, является ли $K$ множеством с одноточечным пересечением.
+Если это не так, то $K$ не является дендритом с одноточечным пересечением.
+    
+\item Построим двудольный граф пересечений $\hat\Gamma$ для фрактального куба $K$.
+При этом следует учесть случаи, когда чёрная вершина в $\hat\Gamma$ соединена более чем с двумя белыми вершинами.
+
+\item Если получившийся двудольный граф пересечений $\hat\Gamma$ является деревом, то $K$ --- дендрит с одноточечным пересечением.    
+\end{enumerate}
+\end{frame}
 
 
+\begin{frame}{}
+\Huge{Фрактальные квадраты с конечным пересечением}
+\end{frame}
 
 \begin{frame}{Основной результат:\\Критерий дендритности фрактального квадрата}
 
@@ -454,10 +535,9 @@ F_\bma=\bigcup\limits_{\bmb\sqsupseteq\bma} \dfrac{F_\bmb+G_{\bma\bmb}}{n}
 \textbf{(b)} $\#G_{\bma\bma}=0$ и существует $\bmb\sqsupset\bma$ такое, что $\#F_\bmb\cdot\#G_{\bma\bmb}=1$.
 
 \begin{proposition}
-\label{thm:den_necessary_sufficient}
 Если фрактальный квадрат $K$ является дендритом, то он обладает свойством одноточечного пересечения.
 \end{proposition}
-\begin{corollary}\label{cor:fsden}
+\begin{corollary}
 Фрактальный квадрат $K$ является дендритом тогда и только тогда, когда его двудольный граф пересечений является деревом.
 \end{corollary}
 %\begin{center}
@@ -466,24 +546,14 @@ F_\bma=\bigcup\limits_{\bmb\sqsupseteq\bma} \dfrac{F_\bmb+G_{\bma\bmb}}{n}
 \end{frame}
 
 
-\begin{frame}{Самоподобная граница}
-\only<1>{
-    \begin{definition}
-    {\em Критическое множество} аттрактора $K$ системы $\eS$ --- это множество $C:=\{x:\; x\in S_i(K)\cap S_j(K),\; S_i, S_j\in\eS\}$ точек пересечений копий аттрактора $K$.
-    \end{definition}
-    \begin{definition}
-    {\em Самоподобной границей} аттрактора $K$ называется множество $\dd K$ всех $x\in K$ таких, что для некоторого $\bj\in I^*$ верно $S_\bj(x)\in C$.
-    \end{definition}
-    }
-\only<2>{
-\includegraphics[width=0.45\textwidth]{kvC.png}
-\hfill
-\includegraphics[width=0.45\textwidth]{kvD.png}}
-\end{frame}
+
 
 
 \begin{frame}{Главное дерево}
 \only<1>{
+\begin{definition}
+{\em Самоподобной границей} аттрактора $K$ называется множество $\dd K$ всех $x\in K$ таких, по образам которых пересекаются друг с другом копии аттрактора $K$.
+\end{definition}
 \begin{definition}
 Пусть $K$ --- самоподобный дендрит c конечной самоподобной границей $\dd K$. 
 Минимальный поддендрит $\hat\gamma\IN K$, содержащий $\dd K$, называется {\em главным деревом} дендрита $K$.
@@ -495,9 +565,6 @@ F_\bma=\bigcup\limits_{\bmb\sqsupseteq\bma} \dfrac{F_\bmb+G_{\bma\bmb}}{n}
 
 
 \begin{frame}{Самоподобная граница  фрактальных квадратов, являющихся дендритами}
-%Пусть $A_D=\{\bma\in A\mmm\{(0,0)\}: D\cap(D+\bma)\neq\0,\ F_\bma\neq\0\}.$ 
-%Самоподобная граница $\dd K$ фрактального квадрата $K$ есть объединение
-%$\dd K=\bigcup\limits_{\bma\in A_D}F_\bma.$
 \begin{theorem}\label{ssboundary}
 Пусть $K$ --- фрактальный квадрат, являющийся дендритом и не являющийся отрезком.
 Тогда $\#\dd K\in\{3,\ 4,\ 6\}$. \\
@@ -532,36 +599,6 @@ F_\bma=\bigcup\limits_{\bmb\sqsupseteq\bma} \dfrac{F_\bmb+G_{\bma\bmb}}{n}
 \end{center}
 \end{frame}
 
-
-%\begin{frame}{Порядок ветвления точки}
-%\begin{theorem}[Порядок ветвления произвольной точки]
-%Для любой точки $x$ во фрактальном квадрате $K=\dfrac{D+K}{n}$, являющемся дендритом, верно, что $Ord(x,K)\le 4$.
-%\end{theorem}
-%% \begin{theorem}
-%% Пусть $K$ --- фрактальный квадрат, являющийся дендритом.
-%% Если $a\in K$ есть угловая точка, то $Ord(a,K)\leq 2$.
-%% \end{theorem}
-%\begin{theorem}[Порядок ветвления угловой точки]
-%Пусть $K$ --- фрактальный квадрат, являющийся дендритом. \\
-%В случае {\bf A} у $K$ может быть одна или две угловые точки с порядками ветвления $\le 2$, или вовсе не быть угловых точек.\\
-%В случае {\bf B} у $K$ четыре угловые точки с порядками ветвления $1$.\\
-%В случае {\bf C} у $K$ две угловых точки с порядками ветвления $\le 2$\\
-%В случае {\bf D} у $K$ может быть либо две угловых точки с порядками ветвления $\le 2$, либо три угловых точки с порядками ветвления $1$.
-%\end{theorem}
-%\end{frame}
-
-
-%\begin{frame}{Порядок точки ветвлния в главном дереве в \textbf{(D6)}}
-%\begin{proposition}\label{lem:d4bound}
-%Пусть $K$ --- фрактальный квадрат типа  {\bf D6}  и $\gamma$ --- его главное дерево.\\ 
-% (i)  для любого $x\in\dd K$ верно, что $Ord(x,\gamma)\leq2$;\\
-%(ii) для любого $x\in\gamma$ верно, что $Ord(x,K)\leq3$.
-%\end{proposition}
-%% \vspace{1cm}
-%% \includegraphics[width=\textwidth]{d6ord3full.pdf} }
-%% %\only<2>{\includegraphics[width=\textwidth]{d6ord3_12.pdf} }
-%% %\only<3>{\includegraphics[width=\textwidth]{d6ord3_34.pdf} }
-%\end{frame}
 
 \begin{frame}{Основной результат:\\Классификация фрактальных квадратов, являющихся дендритами}
 
