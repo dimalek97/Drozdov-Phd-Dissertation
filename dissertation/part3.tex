@@ -363,12 +363,13 @@ $\#G_{\bma_0\bma_1}\cdot\#G_{\bma_1\bma_2}\cdot\ldots\cdot\#G_{\bma_{p-1}\bma_p}
 $$F_0 = \dfrac{d_0+F_0}{n}\cup B = \dfrac{d_0}{n-1} \cup \bigcup\limits_{m=0}^\8 S^m(B),\ \text{ где }\ S(x)=\dfrac{d_0+x}{n}.$$
 Если $B\neq\dfrac{d_0}{n-1}$, то  $F_0$ бесконечно.
 
-Если $\#B=1$, то $B=\dfrac{F_\bma+G_{0\bma}}{n}$, где $\#F_\bma=1$ и $G_{0\bma}=\{d_{0\bma}\}$.
-Координаты точки $\dfrac{d_0}{n-1}$ кратны $\dfrac{1}{n-1}$, в то время как точка $B$  
-может быть представлена дробью $\dfrac{F_\bma+G_{0\bma}}{n}=\dfrac{F_\bma+G_{0\bma}}{n}$
-Следовательно, верны покоординатные равенства $\left(\dfrac{d_0}{n-1}\right)_i=\left(\dfrac{F_\bma+G_{0\bma}}{n}\right)_i\in\{0,1\}$.
-Это возможно только если $F_\bma = \dfrac{d_\bma+F_\bma}{n}$ и $d_0=d_\bma=d_{0\bma}$.
-Из последнего равенства следует, что $\{d_0,\ d_0-(n-1)\bma,\ d_0-n\bma\}\IN D^2$, что возможно только при $\bma=0$.
+Если $\#B=1$, то $B=\dfrac{F_\bma+G_{0\bma}}{n}$ для некоторого $\bma\succ0$, где $\#F_\bma=1$ и $G_{0\bma}=\{d_{0\bma}\}$.
+$$\dfrac{F_\bma+d_{0\bma}}{n}=\dfrac{d_0}{n-1}
+\quad\Rightarrow\quad
+F_\bma=\dfrac{nd_0-(n-1)d_{0\bma}}{n-1}.$$
+При $(d_0)_i\neq(d_{0\bma})_i$ получаем $(F_\bma)_i\notin[0,1]$, поэтому $d_0=d_{0\bma}$ и $F_\bma=\dfrac{d_{\bma0}}{n-1}$.
+Из последнего равенства следует, что $G_0=G_{0\bma}=G_\bma=\{d_0\}$.
+Следовательно, $\{d_0,\ d_0-(n-1)\bma,\ d_0+\bma\}\IN D^2$, что возможно только при $\bma=0$.
 
 Для каждой $\bmb\succ0$, максимальной в $\Gamma_0$, множество $F_\bmb$ всегда одноточечно.
 Индуктивно для каждого $\bma\succ0$ множество $F_\bma$ также не более чем счётно.\\
