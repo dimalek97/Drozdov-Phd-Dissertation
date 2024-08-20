@@ -382,6 +382,13 @@ $Q_3\cap\dfrac{K+(1,1)}{n} =\dfrac{F_{(1,1)}}{n}$,\quad если $(1,1)\in D$.
 \end{itemize}
 \end{theorem}
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{C_type_Three.png}
+    \caption{Угловая точка порядка 2 для типа {\bf C} и две главные дуги, содержащие ее.} 
+    \label{fig:C_type_Three}
+\end{figure}
+
 \begin{proof}
 Из Теоремы \ref{ssboundary} следует, что:
 \begin{itemize}[nolistsep]
@@ -421,13 +428,6 @@ $Q_3\cap\dfrac{K+(1,1)}{n} =\dfrac{F_{(1,1)}}{n}$,\quad если $(1,1)\in D$.
 %     \label{fig:A_type_Three}
 % \end{figure}
 
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.7\textwidth]{C_type_Three.png}
-    \caption{Угловая точка порядка 2 для типа {\bf C} и две главные дуги, содержащие ее.} 
-    \label{fig:C_type_Three}
-\end{figure}
-
 % \begin{figure}[H]
 %     \centering
 %     \includegraphics[width=0.7\textwidth]{D6_type_Three.png}
@@ -447,59 +447,53 @@ $Q_3\cap\dfrac{K+(1,1)}{n} =\dfrac{F_{(1,1)}}{n}$,\quad если $(1,1)\in D$.
 Тогда существует $l$ жордановых дуг $\{\ga_i\}_{i=1}^l$ в $K$ с общим концом $x$, причем таких, что дуги $\ga_i\mmm \{x\}$ не пересекаются.
 Существует натуральное $p>0$ такое, что для каждого $\ga_i$ его диаметр $|\ga_i|$ больше, чем $\sqrt{2}n^{-p}$.
 С учётом Леммы \ref{quadruples} можно увидеть, что существуют $1$, $2$ или $3$ мультииндекса $\bi=i_1i_2\ldots i_p$ таких, что $x\in S_\bi(K)$.
-
-В случае (1), когда такое $\bi$ единственно, каждая дуга $\{\ga_i\}$ проходит в одну из соседних копий порядка $n^p$ для $K_\bi$ через одну из точек $\dd K_\bi$ (см. Рисунок \ref{fig:case1}). 
-Таким образом, число $l$ не превышает количества соседей для $K_\bi$  и числа точек в $\dd K_\bi$. 
-
-Аналогично можно рассуждать в случае (2), когда $x\in K_\bi\cap K_\bj$ и $x$ лежит внутри (не в конце) общей стороны квадратов $S_\bi(P)$ и $S_\bj(P)$ (см. Рисунок \ref{fig:case2}), и в случае (3), когда $x$ является общей угловой точкой для двух или трех квадратов (см. Рисунок \ref{fig:case3}). 
-В этих случаях число $l$ не больше числа соседей для тех $K_\bi$, которые содержат $x$ и соответствующие точки их границ.
+Рассмотрим отдельно эти случаи.
 
 \begin{figure}[H]
-    \centering
-    %\includestandalone[width=1\textwidth]{tikzpictures/case1}
-    \includegraphics[width=\textwidth]{case1.pdf}
-    \caption{Порядки ветвления внутренних точек в типах \textbf{A}, \textbf{B}, \textbf{C} и \textbf{D}}
-    \label{fig:case1}
+\centering
+\includegraphics{case1.pdf}
+\caption{Копия с $x\in\dot K_\bi$ (красная) и возможные соседи (зелёные) в типах \textbf{A}, \textbf{B}, \textbf{C} и \textbf{D}}
+\label{fig:case1}
 \end{figure}
 
-\textbf{(1)}
-Пусть $x\in \dot K_\bi$.
+\textbf{(1)} В случае, когда такое $\bi$ единственно, то есть $x\in \dot K_\bi$, каждая дуга $\{\ga_i\}$ проходит в одну из соседних копий порядка $n^p$ для $K_\bi$ через одну из точек $\dd K_\bi$ (см. рисунок \ref{fig:case1}). 
+Таким образом, число $l$ не превышает количества соседей для $K_\bi$  и числа точек в $\dd K_\bi$. 
 Для типов {\bf A, B, C} число $l\leq 4$.
 
-Для типа {\bf D} верно, что $l\le 3$. 
-Действительно, выбирая четвёрку из $6$ возможных соседей копии $K_\bi$, мы получаем запретную комбинацию. 
+Для типа {\bf D} получаем $l\le 3$, так как при выборе любых четырёх из шести возможных соседей копии $K_\bi$, мы получаем запретную комбинацию.
 
-\begin{figure}[h]
-    \centering
-    %\includestandalone[width=0.66\textwidth]{tikzpictures/case2}
-    \includegraphics[width=0.73\textwidth]{case2.pdf}
-    \caption{Доступные соседи точки $x$ на общей стороне для типов \textbf{A}, \textbf{C} и \textbf{D6}}. 
-    \label{fig:case2}
+\begin{figure}[H]
+\centering
+\includegraphics{case2.pdf}
+\caption{Пара копий с $x$ на общей стороне (красные) и их возможные соседи (зелёные) для типов \textbf{A}, \textbf{C} и \textbf{D6}}. 
+\label{fig:case2}
 \end{figure}
 
-\textbf{(2)}
-Пусть $x\in S_\bi(\dd K)$ --- внутренняя точка общей стороны для $S_\bi(P)$ и $S_\bj(P)$.
+\textbf{(2)} Аналогично можно рассуждать в случае, когда $x\in K_\bi\cap K_\bj$ и $x$ лежит внутри (не в конце) общей стороны квадратов $S_\bi(P)$ и $S_\bj(P)$ (см. рисунок \ref{fig:case2}).
 Это возможно только в случаях \textbf{A}, \textbf{C} и \textbf{D6}.
+В отличие от случая \textbf{(1)}, здесь $x\in S_\bi(\dd K)$.
 
-В этом случае число доступных соседей $S_\bi(P)\cup S_\bj(P)$ не может превышать $4$ согласно Лемме \ref{quadruples}.
+Тогда $l$ не превышает максимального числа соседей для пары копий, которые содержат $x$.
+Согласно Лемме \ref{quadruples}, в этом случае число соседей для $K_\bi\cup K_\bj$ не может превышать $4$.
 
-\begin{figure}[h]
-    \centering
-%\includestandalone[width=0.7\textwidth]{tikzpictures/case3}
-    \includegraphics[width=0.6\textwidth]{case3.pdf}
-    \caption{Порядки угловых точек копии для типов {\bf A, B, C, D6, D3}.}
-    \label{fig:case3}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{case3.pdf}
+\caption{Копии с общей угловой точкой $x$ (красные) и их возможные соседи (зелёные) для типов {\bf A, B, C, D6, D3}.}
+\label{fig:case3}
 \end{figure}
 
-\textbf{(3)}
+\textbf{(3)} Рассмотрим случай, в котором $x$ является общей угловой точкой для двух или трех копий (см. рисунок \ref{fig:case3}).
 Пусть $x$ --- вершина для $S_\bi(P)$.
 Для типов \textbf{A},  \textbf{B}, \textbf{C} и \textbf{D6} точка $x$ принадлежит не более чем двум копиям $K_\bi, K_\bj$, и в случае \textbf{D3} точка $x$ может принадлежать не более чем трём копиям $K_\bi, K_\bj, K_\bk$, как это показано на Рисунке \ref{fig:case3}.
 
-Согласно Теореме \ref{thm:vertex_branching}, угловая точка $x$ имеет $Ord\leq2$ относительно каждой копии.
+Согласно Теореме \ref{thm:vertex_branching}, $Ord(x,K_\bi)\leq2$ для любой копии $K_\bi$.
 Более того, для типов \textbf{B} и \textbf{D3} порядок угловой точки относительно копии равен $1$.
+Тогда для типа \textbf{B} справедливо $Ord(x,K_\bi\cup K_\bj)\leq2$ и для типа \textbf{D3} справедливо $Ord(x,K_\bi\cup K_\bj\cup K_\bk)\leq3$.
+Следовательно, $Ord(x,K)\leq3$ для типа {\bf D3} и $Ord(x,K)\leq2$ для типа {\bf B}.
 
-Следовательно, для угловой точки $Ord(x,K)\leq4$ для типов {\bf A, C, D6}, $Ord(x,K)\leq3$ для типв {\bf D3} и 
-$Ord(x,K)\leq2$ для типа {\bf B}.
+Число $l$ не превышает максимального числа соседей для тех копий, которые содержат $x$.
+Тогда для типов {\bf A, C, D6}, согласно лемме \ref{quadruples}, $Ord(x,K)\leq4$.
 \end{proof}
 
 
@@ -632,7 +626,7 @@ $Ord(x,K)\leq2$ для типа {\bf B}.
 
 
 \begin{remark}
-Если $K$ относится к типу {\bf D6}, то его главное дерево $\gamma$ не может иметь форму, отличную от моделей 4, 5, 6 или 7 с Рисунка \ref{fig:7trees}.
+Если $K$ относится к типу {\bf D6}, то его главное дерево $\gamma$ не может иметь форму, отличную от моделей 4, 5, 6 или 7 на рисунке \ref{fig:7trees}.
 Невозможность моделей 1 и 2 главного дерева фрактальных квадратов типа {\bf D6} обусловлена тем, что число концов в $\gamma$ для типа {\bf D6} не меньше 4.
 Однако для доказательства Теоремы \label{thm:7trees} это не требуется.
 \end{remark}
