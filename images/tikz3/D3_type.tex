@@ -1,0 +1,23 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+    \usetikzlibrary{arrows.meta}
+    
+\begin{document}
+\begin{tikzpicture}
+    % \draw[help lines] (0,0) grid (11,5);
+    \node at (5,5) {\includegraphics[width=10cm]{D3-type.png}};
+        \foreach \x in
+        {(0,0), (10,0), (10,10)} 
+        {\fill \x circle(0.15);}
+    \path[->,>={Latex[length=5mm]}, line width=1mm, red]
+        (-0.7,-0.7) edge (0,0)
+        (10.7,10.7) edge (10,10);
+    \path[->,>={Latex[length=5mm]}, line width=1mm, blue]
+        (-1,0) edge (0,0)
+        (11,0) edge (10,0);
+    \path[->,>={Latex[length=5mm]}, line width=1mm, black]
+        (10,-1) edge (10,0)
+        (10,11) edge (10,10);
+\end{tikzpicture}
+\end{document}
