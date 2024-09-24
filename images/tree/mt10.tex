@@ -1,0 +1,27 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+    \usetikzlibrary{arrows.meta}
+    \usetikzlibrary{calc}
+    \usetikzlibrary {decorations.pathmorphing}
+    % \usetikzlibrary {decorations.pathreplacing}
+    % \usetikzlibrary {decorations.shapes}
+    \tikzset{st/.style={shape=circle, draw, line width=1mm, inner sep=1mm, }, }
+    
+\begin{document}
+\begin{tikzpicture} %t7
+        \node[st,shift={(0,0)}] (k0){};
+        \node[st,shift={(1,0)}] (k1){};
+        \node[st,shift={(2,0)}] (k2){};
+        \node[st,shift={(1,1)}] (k3){};
+        \node[st,shift={(1,-1)}] (k4){};
+        \node[st,shift={(2,1)}] (k5){};
+        \node[st,shift={($(3,0)+(60:1)$)}] (k6){};
+        \node[st,shift={($(3,0)+(300:1)$)}] (k7){};
+        \node[st,shift={(3,0)}] (k8){};
+        \path[line width=1mm]
+            (k1) edge (k0) edge (k2) edge (k3) edge (k4)
+            (k8) edge (k6) edge (k7)
+            (k2) edge (k5) edge (k8);
+    \end{tikzpicture}
+\end{document}
