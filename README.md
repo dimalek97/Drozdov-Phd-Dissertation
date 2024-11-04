@@ -10,7 +10,7 @@
 Анализ на самоподобных множествах с конечным пересечением
 
 Размещение диссертации: 
-[ ](https://math.nsc.ru/dis-council/dissert)
+[math.nsc.ru/dis-council/dissert](https://math.nsc.ru/dis-council/dissert)
 
 Дата размещения: 19 сентября 2024 г.
 
