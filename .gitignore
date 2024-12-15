@@ -308,4 +308,4 @@ referat.pdf
 QW_presentation.pdf
 predefense_diss.pdf
 synopsis.pdf
-*.pdf
+%*.pdf

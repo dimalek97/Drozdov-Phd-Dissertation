@@ -1,0 +1,52 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+    \usetikzlibrary{calc}
+\usepackage{graphicx} % Работа с графикой \includegraphics{}
+    \graphicspath{{tree/}}
+    
+\begin{document}
+\begin{tikzpicture}
+%\draw[help lines] (-3,5) grid (20,-11);
+\draw[line width=1mm, rounded corners=4mm] (12.5,1.8) rectangle (18,4.2);
+\draw[line width=1mm, rounded corners=4mm] (-1.5,1.8) rectangle (9,4.2);
+\draw[line width=1mm, rounded corners=4mm] (-1.5,-3.2) rectangle (9,-0.8);
+\draw[line width=1mm, rounded corners=4mm] 
+(-1.5,-10.5) -- (-1.5,-4.8) -- (10,-4.8) --
+(10,0.2) -- (18.5,0.2) -- (18.5,-10.5) --cycle;
+
+\node at (14, 3) {\includegraphics{mt1.pdf}};
+\node at (16.5, 3) {\includegraphics{mt2.pdf}};
+
+\node at (0, 3) {\includegraphics{mt1.pdf}};
+\node at (2.5, 3) {\includegraphics{mt2.pdf}};
+\node at (5, 3) {\includegraphics{mt4.pdf}};
+\node at (7.5, 3) {\includegraphics{mt3.pdf}};
+
+\node at (0, -2) {\includegraphics{mt1.pdf}};
+\node at (2.5, -2) {\includegraphics{mt2.pdf}};
+\node at (5, -2) {\includegraphics{mt4.pdf}};
+\node at (7.5, -2) {\includegraphics{mt3.pdf}};
+
+\node at (0, -6) {\includegraphics{mt1.pdf}};
+\node at (2.5, -6) {\includegraphics{mt2.pdf}};
+\node at (5, -6) {\includegraphics{mt4.pdf}};
+\node at (7.5, -6) {\includegraphics{mt3.pdf}};
+\node at (10.5, -6) {\includegraphics{mt5.pdf}};
+\node at (14, -6) {\includegraphics{mt8.pdf}};
+\node at (17, -6) {\includegraphics{mt9.pdf}};
+
+\node at (14, -2) {\includegraphics{mt6.pdf}};
+\node at (1, -9) {\includegraphics{mt7.pdf}};
+\node at (6, -9) {\includegraphics{mt10.pdf}};
+\node at (10, -9) {\includegraphics{mt11.pdf}};
+\node at (13.5, -9) {\includegraphics{mt12.pdf}};
+\node at (17, -9) {\includegraphics{mt13.pdf}};
+
+\node at (11.5, 3){\Huge{\bf D3}};
+\node at (-2.5, 3.5){\Huge{\bf A}};
+\node at (-2.5, 2.5){\Huge{\bf C}};
+\node at (-2.5, -2){\Huge{\bf B}};
+\node at (-2.5, -7.5){\Huge{\bf D6}};
+\end{tikzpicture}
+\end{document}
