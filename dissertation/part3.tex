@@ -129,11 +129,19 @@ $$P_\bma=\left\{x=(x_1,\ldots,x_k)\ :\ x_i=\frac{\al_i+1}{2} \text{ при } \al
 Это утверждение показывает, что каждая грань фрактального $k$-куба сама является фрактальным $k$-кубом.
 
 \begin{proof}
-Заметим, что $n K_\bma=n(K\cap P_\bma)=(K+D)\cap nP_\bma.$ 
-Если $d\in D$ и   $d\notin(n-1)P_\bma$, то множество $(d+K)\cap nP_\bma$ пусто.
-Имеет смысл рассматривать только те $d\in D$, для которых $d\in D\cap (n-1)P_\bma=D_\bma$. Также, если $x\in K\setminus K_\bma$, то $(x+D)\cap nP_\bma=\0$.  
-Таким образом, $$n K_\bma=(D+K)\cap n P_\bma=(D_\bma+K)\cap ((n-1)P_\bma+P_\bma)=D_\bma+K_\bma.$$
-%Тогда $(d+K)\cap nP_\bma=d+K_\bma$, следовательно $n K_\bma={K_\bma+D_\bma}$.
+%Заметим, что $n K_\bma=n(K\cap P_\bma)=(K+D)\cap nP_\bma.$ 
+%Если $d\in D$ и   $d\notin(n-1)P_\bma$, то множество $(d+K)\cap nP_\bma$ пусто.
+%Имеет смысл рассматривать только те $d\in D$, для которых $d\in D\cap (n-1)P_\bma=D_\bma$. Также, если $x\in K\setminus K_\bma$, то $(x+D)\cap nP_\bma=\0$.  
+%Таким образом, $$n K_\bma=(D+K)\cap n P_\bma=(D_\bma+K)\cap ((n-1)P_\bma+P_\bma)=D_\bma+K_\bma.$$
+%%Тогда $(d+K)\cap nP_\bma=d+K_\bma$, следовательно $n K_\bma={K_\bma+D_\bma}$.
+Если точка лежит в $K+D$, то она имеет вид $x+d$, где $x\in K$ и $d\in D$.
+Если $x+d\in nP_\bma$, то, согласно Замечанию \ref{rmk:point}, для каждого $i\in\{1,\ldots,k\}$,
+\begin{itemize}[nolistsep]
+\item[1.] $(x+d)_i=0$,  если $\bma_i=-1$, тогда $x_i=0$ и $d_i=0$;
+\item[2.] $(x+d)_i=1$,  если $\bma_i=1$, тогда $x_i=1$ и $d_i=n-1$;
+\item[3.] $(x+d)_i\in[0,1]$,  если $\bma_i=0$, тогда $0\leq x_i\leq1$ и $d_i\in\{0,\ldots,n-1\}$.
+\end{itemize}
+Из этого следует, что $x\in K_\bma$ и $d\in(n-1)P\cap D=D_\bma$.
 \end{proof}
 
 \subsection{Пересечения $F_\al$ граней фрактальных $k$-кубов}
