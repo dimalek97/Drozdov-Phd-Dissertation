@@ -807,7 +807,7 @@ $Q_3\cap\dfrac{K+(1,1)}{n} =\dfrac{F_{(1,1)}}{n}$,\quad если $(1,1)\in D$.
 \end{figure}
 
 
-\begin{definition}
+\begin{definition}\label{def:forest}
 Самоподобным $k$-лесом мы будем называть самоподобное множество $\mathcal{K}$, являющееся дизъюнктным объединением дендритов $\mathcal{C}_i$ при $i=1,\ldots,k$:
 $$\mathcal{K}=\bigsqcup_{i=1}^k\mathcal{C}_i.$$
 \end{definition}
@@ -826,7 +826,7 @@ $$\mathcal{K}=\bigsqcup_{i=1}^k\mathcal{C}_i.$$
 Основным результатом раздела является следующая теорема о существовании фрактальных квадратов,  являющихся нетривиальными самоподобными $k$-лесами на плоскости.
 
 \begin{theorem}\label{thm:mainresult}
-Для любого натурального $k\geq2$  и  $n=(2k-1)k_1$,  где $ k_1\ge k+2$, cуществует самоподобный $k$-лес являющийся фрактальным квадратом порядка $n$.
+Для любых натуральных $k\geq2$  и  $ k_1\ge k+2$ существует самоподобный $k$-лес, являющийся фрактальным квадратом порядка $n=(2k-1)k_1$.
 \end{theorem} 
 
 Теорема будет доказана в параграфе \ref{ss:mainresultproof}.
@@ -962,7 +962,7 @@ $$T_m(d_i)=\frac{d_i+\mathcal{K}}{n}\cup\frac{d_i+(0,1)+\mathcal{K}}{n}\cup\cdot
 
 Потребуем, чтобы
 \begin{itemize}
-\item[{\bf(c.3)}] $n\geq(2k-1)\cdot k_1$, где $k_1\geq k+2$.
+\item[{\bf(c.3)}] $n=(2k-1)\cdot k_1$, где $k_1\geq k+2$.
 \end{itemize}
 При выполнении {\bf(a, b, c.1, c.2)} условие {\bf(c.3)} также необходимо для ацикличности графа $G_{\mathcal{K}}$.
 Действительно, рассмотрим в компоненте ${\mathcal{C}}_1$ связную цепочку $T_k(d_1)\cup\ldots\cup T_k(d_m)$ $k$-башен, соединяющую точки $A_1$ и $B_1$ (см. Рисунок \ref{fig:brokenline} слева).
@@ -998,9 +998,9 @@ t_i\vdots(2k-1)
 \end{equation*}
 
 \begin{figure}[h]
-\fbox{\includegraphics[height=8cm]{broken_line.pdf}}
+\includegraphics[height=8cm]{broken_line.pdf}
 \hfill
-\fbox{\includegraphics[height=8cm]{connection.pdf}}
+\includegraphics[height=8cm]{connection.pdf}
 \caption{Ломаные, соединяющие пары точек $\{A_1, B_1\}$ и $\{A_j, B_{j+1}\}$ (слева) и допустимые виды соседства башен (справа)}
 \label{fig:brokenline}
 \end{figure}
@@ -1035,5 +1035,24 @@ $$\mathcal{T}_k=\bigcup\limits_{i=0}^{k-1}\bigl({\mathcal{K}}+(0,i)\bigr).$$
 $$\mathcal{T}_k=\bigcup_{i=0}^{k-1}\bigcup_{j=1}^k\Bigl({\mathcal{C}}_j+(0,i)\Bigr),$$ то все компоненты ${\mathcal{C}}_i\subset{\mathcal{K}}$ являются дендритами.
 
 Это означает, что фрактальный квадрат $\mathcal{K}$ с $k$ связными компонентами, удовлетворяющий условиям \textbf{(a, b, c)}, является самоподобным $k$-лесом.
-При этом такой $k$-лес может быть реализован только на фрактальных квадратах порядка $n\geq(2k-1)\cdot k_1$, где $k_1\geq k+2$.
+При этом такой $k$-лес может быть реализован только на фрактальных квадратах порядка $n=(2k-1)\cdot k_1$ при натуральном $k_1\geq k+2$.
 Тем самым Теорема \ref{thm:mainresult} доказана.
+
+
+\subsection{Альтернативные способы построения самоподобных лесов на фрактальных квадратах}
+
+\begin{figure}[H]
+\includegraphics[height=6cm]{construction5t3.pdf}
+\hfill
+\includegraphics[height=6cm]{connection2.pdf}
+\caption{}
+\end{figure}
+
+
+\begin{figure}[H]
+\fbox{\includegraphics[width=0.45\textwidth]{FS-SSF3-12K.png}}
+\hfill
+\includegraphics[width=0.45\textwidth]{FS-SSF3-12P.png}
+\caption{}
+\end{figure}
+
