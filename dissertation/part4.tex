@@ -1030,7 +1030,7 @@ $$\mathcal{T}_k=\bigcup\limits_{i=0}^{k-1}\bigl({\mathcal{K}}+(0,i)\bigr).$$
 Поскольку ${\mathcal{K}}$ состоит только из башен $\{T_k(d_j)=T_k(0)+d_j/n : d_j\in\hat D\}$, то и $T_k$ состоит из образов башни $T_k(0)$.
 Это означает, что множество $T_k$ является самоподобным.
 Граф $G({\mathcal{K}})$ попарных пересечений $k$-башен в ${\mathcal{K}}$ ацикличен, поэтому двудольный граф $\hat G(\mathcal{T}_k)$ попарных пересечений образов $k$-башни $T_k(0)$ в $\mathcal{T}_k$ ацикличен и связен (пример такого графа показан на Рисунке \ref{fig:2tower} справа).
-Тогда, согласно Теореме \ref{denfip}, такое $\mathcal{T}_k$ --- самоподобный дендрит.
+Тогда, согласно Теореме \ref{thm:fpden}, такое $\mathcal{T}_k$ --- самоподобный дендрит.
 А поскольку 
 $$\mathcal{T}_k=\bigcup_{i=0}^{k-1}\bigcup_{j=1}^k\Bigl({\mathcal{C}}_j+(0,i)\Bigr),$$ то все компоненты ${\mathcal{C}}_i\subset{\mathcal{K}}$ являются дендритами.
 
@@ -1041,18 +1041,77 @@ $$\mathcal{T}_k=\bigcup_{i=0}^{k-1}\bigcup_{j=1}^k\Bigl({\mathcal{C}}_j+(0,i)\Bi
 
 \subsection{Альтернативные способы построения самоподобных лесов на фрактальных квадратах}
 
+Далее будут приведены несколько модификаций вышеописанного метода построения самоподобных лесов на фрактальных квадратах.
+С такими модификациями были построены примеры.\\
+
+\textbf{Модификация 1: удаление из $\dd\mathcal{K}$ точек $A',B'$.}
+
+В этом случае $k$-башни могут пересекаться друг с другом только по образам точек $A$ и $B$, вследствие чего меняются допустимые виды соседства $k$-башен.
+
 \begin{figure}[H]
 \includegraphics[height=6cm]{construction5t3.pdf}
 \hfill
 \includegraphics[height=6cm]{connection2.pdf}
-\caption{}
+\caption{Слева точки из $ \partial{\mathcal{K}}$ и содержащие их компоненты $\mathcal{C}_i$. По центру показаны $k$-башня и соответствующий ей фрагмент графа $G_{\mathcal{K}}$. Справа показаны допустимые виды соседства $k$-башен.}
 \end{figure}
 
+Для данной модификации можно сформулировать результат, аналогичный теореме \ref{thm:mainresult} при аналогичном доказательстве.
+
+\begin{corollary}
+Для любых натуральных $k\geq3$  и  $ k_1\ge k+2$ существует самоподобный $k$-лес, являющийся фрактальным квадратом порядка $n=\dfrac{(2k-2)k_1}{\text{НОД}(k,2k-2)}$.\qed
+\end{corollary} 
 
 \begin{figure}[H]
 \fbox{\includegraphics[width=0.45\textwidth]{FS-SSF3-12K.png}}
 \hfill
 \includegraphics[width=0.45\textwidth]{FS-SSF3-12P.png}
-\caption{}
+\caption{Самоподобный 3-лес на фрактальном квадрате порядка 12.}
 \end{figure}
 
+
+\begin{figure}[H]
+\fbox{\includegraphics[width=0.45\textwidth]{FS-SSF4-18K.png}}
+\hfill
+\includegraphics[width=0.45\textwidth]{FS-SSF4-18P.png}
+\caption{Самоподобный 4-лес на фрактальном квадрате порядка 18.}
+\end{figure}
+
+\textbf{Модификация 2: изменить то, какие именно точки из $\partial{\mathcal{K}}$ содержат компоненты $\mathcal{C}_i$.}
+
+\begin{figure}[H]
+\centering
+\includegraphics[height=7cm]{construction2.pdf}
+\caption{Точки из $\partial{\mathcal{K}}$ и содержащие их компоненты $\mathcal{C}_i$.}
+\end{figure}
+
+В данной конфигурации допустимые виды соседства $k$-башен аналогичны описываемым в доказательстве теоремы \ref{thm:mainresult} в разделе \ref{ss:mainresultproof}.
+
+Реализуемые при данной модификации самоподобные леса описаны теоремой \ref{thm:mainresult}, то есть для натуральных $k\geq2$  и  $ k_1\ge k+2$ существует самоподобный $k$-лес данной модификации, являющийся фрактальным квадратом порядка $n=(2k-1)k_1$.
+
+
+
+\textbf{Модификация 3: построение $k$-леса из 2-башен.}
+
+\begin{figure}[H]
+\includegraphics[height=6cm]{construction3.pdf}
+\hfill
+\includegraphics[height=6cm]{tower3x2.pdf}
+\caption{Слева точки из $\partial{\mathcal{K}}$ и содержащие их компоненты $\mathcal{C}_i$. Справа показаны показаны $2$-башня и соответствующий ей фрагмент графа $G_{\mathcal{K}}$.}
+\end{figure}
+
+В данной конфигурации, как и в предыдущей модификации, допустимые виды соседства $2$-башен аналогичны описываемым в доказательстве теоремы \ref{thm:mainresult}.
+
+\begin{figure}[H]
+\fbox{\includegraphics[width=0.3\textwidth]{FS-SSF3-18K.png}}
+\hfill
+\includegraphics[width=0.3\textwidth]{FS-SSF3-18P.png}
+\hfill
+\includegraphics[width=0.3\textwidth]{IGC3_3f_2t.pdf}
+\caption{Самоподобный 3-лес на фрактальном квадрате порядка 18 из 2-башен (слева) и граф попарных пересечений его компонент (справа). Пример сделан по модификациям 2 и 3.}
+\end{figure}
+
+Для данной модификации можно сформулировать результат, аналогичный теореме \ref{thm:mainresult} и доказываемый по аналогичным рассуждениям.
+
+\begin{corollary}
+Для натуральных $k\geq2$ и $k_1\ge 2k$ существует самоподобный $k$-лес, являющийся фрактальным квадратом порядка $n=3k_1$.\qed
+\end{corollary} 
