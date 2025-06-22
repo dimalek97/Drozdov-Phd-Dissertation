@@ -1,5 +1,5 @@
 \documentclass[aspectratio=1610, 10pt, notheorems]{beamer}
-\usetheme{Warsaw} 
+\usetheme{Berkeley}
 \usecolortheme{seahorse}
 
 %%% Кодировка и локализация %%%
@@ -19,7 +19,7 @@
 \usepackage{mathrsfs} % Mathematical Script letters (шрифт Эйлера) \mathscr{}
 \usepackage{euscript} % Шрифт Евклида \EuScript{}
 % каллиграфический шрифт \mathcal{} не требует пакета
-\usepackage{enumitem}
+%\usepackage{enumitem}
 \usepackage{bm}
 \usepackage{multicol}
 
@@ -51,48 +51,42 @@
 \everydisplay{\color{blue}} % цвет выключных формул
 \setbeamertemplate{navigation symbols}{} % Убрать панель навигации
 % \setbeamertemplate{footline}[frame number] % Номера слайдов вместо нижней строки
-\setbeamertemplate{page number in head/foot}[totalframenumber]
-\setbeamertemplate{bibliography item}{\insertbiblabel}
+%\setbeamertemplate{page number in head/foot}[totalframenumber]
+%\setbeamertemplate{bibliography item}{\insertbiblabel}
 \hypersetup{unicode=true} % разрешить использование символов Юникод в закладках. настройка для hiperref
+\logo{\includegraphics[width=1.4cm]{LogoIM.png}}
 
 \input{common/newnames}     % Новые переменные и переименования
 
 %%% Данные для титульного листа %%%
-\title[Анализ на самоподобных множествах с конечным пересечением]
+\title[ ]
     {Анализ на самоподобных множествах с конечным пересечением}
-\author[Дмитрий Дроздов]
-    {Дроздов Дмитрий Алексеевич\\ \; \\
+\author[ ]
+    {Соискатель: Дроздов Дмитрий Алексеевич\\ \; \\
     Научный руководитель:\\ 
     д. ф.-м. н., доцент Тетенов Андрей Викторович}
-\institute[ИМ СО РАН]{\large Институт математики имени С. Л. Соболева СО РАН}
-\date[14.08.2024]{14.08.2024}
+\institute[ИМ СО РАН]{Институт математики имени С. Л. Соболева СО РАН, Новосибирск}
+\date[10.06.2024]
+    {Предзащита диссертации на соискание ученой степени\\ кандидата физико-математических наук\\ \; \\
+    24.06.2024}
+
+
 \begin{document}
-\Large
 
 
 \begin{frame}{}
-\titlepage
+    \titlepage
 \end{frame}
 
-
-\begin{frame}{Основные результаты}
-
-{\large
-\begin{itemize}
-\item[1.a] Доказано, что если аттрактор обобщённой полигональной системы является дендритом, то он удовлетворяет условию совпадения параметров.
-\item[1.b] Доказано, что при достаточно малом $\delta=\delta(\eS)>0$ аттрактор любой (удовлетворяющей условию совпадения параметров) $\delta$-деформации $\eS'$  полигональной системы $\eS$ является дендритом, изоморфным аттрактору системы $\eS$.
-\item[2.a] Оценена мощность пересечения копий фрактальных $k$-кубов.
-\item[2.b] Получен алгоритм, позволяющий определить фрактальные $k$-кубы с одноточечным пересечением, являющиеся дендритмами.
-\item[3.a] Доказано, что фрактальные квадраты, являющиеся дендритами, обладают свойством одноточечного пересечения.
-
-\item[3.b] Доказано, что у фрактальных квадратов, являющихся дендритами, может быть ровно семь возможных топологических типов главного дерева.
-\end{itemize}}
-\end{frame}
+%\begin{frame}{}
+%\tableofcontents
+%\end{frame}
 
 
-\begin{frame}{Самоподобное множество}
+\section{Вводные понятия} %
 
-\only<1>{
+
+\begin{frame}{Вводные понятия}{Самоподобное множество}
     \begin{definition}[Hutchinson J. E. (1981)]
         Пусть $\eS=\{S_1, \ldots, S_m\}$ --- система сжимающих подобий в $\mathbb{R}^n$.  
         Непустой компакт $K$, удовлетворяющий уравнению  $K=\bigcup\limits_{i=1}^m S_i(K)$, будем называть {\em аттрактором системы} $\eS$ или множеством, самоподобным (инвариантным) относительно системы $\eS$.
@@ -103,100 +97,76 @@
     % Мы обозначим как $I=\{1, \ldots, m\}$ множество индексов системы $\eS$, а также обозначим как $I^{*}=\bigcup\limits_{n=1}^\infty I^n$ множество слов $\bm{i}=i_1\ldots i_n$ конечной длинны алфавита $I$, называемых {\em мультииндексами}.
     % Мы будем использовать сокращение $S_{\bj} = S_{j_{1}j_{2}\ldots j_{n}}=S_{j_{1}}S_{j_{2}} \ldots S_{j_{n}}$ и обозначим $S_{\bj}(K)$ как $K_{\bj}$.
     % Множество $K_\bj$,  где $\bj=j_{1}j_{2}\ldots j_{n}$,  будем называть {\em копией порядка (итерации) $n$} множества $K$.
-    \footnotetext[1]{Hutchinson J. E., Fractals and self-similarity, Indiana Univ. Math. J. \textbf{30} (1981), 713--747.}}
-\only<2>{
     \begin{center}
-    \includegraphics[width=0.5\textwidth]{SerpTri.png}
-    \hfill
-    \includegraphics[width=0.4\textwidth]{CS.png}
-    \end{center}}
+    \includegraphics[width=0.4\textwidth]{SerpTri.png}
+    \end{center}
+    \footnotetext[1]{Hutchinson J. E., Fractals and self-similarity, Indiana Univ. Math. J. \textbf{30} (1981), 713--747.}
 \end{frame}
 
 
-%\begin{frame}{Простой граф пересечений}
-%\only<1>{
+\begin{frame}{Вводные понятия}{Самоподобная граница}
 %\begin{definition}
-%Обозначим как $\tilde{\Gamma}(\eS)$ граф, вершинам которого соответствуют копии $\{S_i(K):\; S_i\in \eS\}$, а пара вершин $S_i(K),\ S_j(K)$ соединена ребром, если $S_i(K)\cap S_j(K)\neq\0$.
-%Назовём такой граф {\em простым графом пересечений} для $K(\eS)$ 
+%{\em Самоподобной границей} аттрактора $K$ называется множество $\dd K$ всех $x\in K$ таких, по образам которых пересекаются друг с другом копии аттрактора $K$.
 %\end{definition}
-%
-%\begin{theorem}[Критерий связности, Hata M. (1985)]
-%Аттрактор $K(\eS)$ системы $\eS$ связен тогда и только тогда, когда его простой граф пересечений $\tilde{\Gamma}(\eS)$ связен.
-%Тогда аттрактор $K(\eS)$ локально связн и  линейно связен.
-%\end{theorem}
-%\footnotetext[2]{Hata Masayoshi, On the structure of self-similar sets, Japan Journal of Applied Mathematics 2 (1985), 381--414.}}
-%% \footnotetext[2]{Bandt C. and Keller K., Self-Similar Sets 2. A Simple Approach to the Topological Structure of Fractals, Mathematische Nachrichten 154, 1(1991), 27--39}
-%\only<2>{
-%    \includegraphics[width=0.4\textwidth]{SerpTri.png}
-%    \hfill
-%    \includegraphics[width=0.4\textwidth]{SIG.pdf}
-%}
-%\end{frame}
+%Самоподобной границей аттрактора $K$ называется множество $\dd K$ всех $x\in K$ таких, по образам которых пересекаются друг с другом копии аттрактора $K$
+\begin{definition}
+% {\em Самоподобной границей} аттрактора $K$ называется множество $\dd K$ всех $x\in K$ таких, по образам которых пересекаются друг с другом копии аттрактора $K$.
+Пусть $C:=\{x:\; x\in S_i(K)\cap S_j(K),\; i,j \in I, i\neq j\}$ ---  объединение всех попарных пересечений $S_i(K)\cap S_j(K)$ (при $i\neq j$) копий первой степени самоподобного множества $K$.
+% Назовём такое $\eC$ {\em критическим множеством}.
+% Каждая точка критического множества имеет как минимум два адреса в индексном пространстве.
+
+%Множество $\dd K:=\{x\in K: \text{существует }\bj\in I^* \text{ такое что } S_\bj(x)\in \eC\}$ назовём {\em самоподобной границей} для $K$.
+{\em Самоподобной границей} аттрактора $K$ называется множество $\dd K$ всех $x\in K$ таких, что для некоторого $\bj\in I^*$ верно $S_\bj(x)\in C$.
+\end{definition}
+%Говоря иначе, самоподобная граница $\dd K$ --- это множество всех предшественников для точек из $\eC$.
+\qquad
+\includegraphics[width=0.35\textwidth]{images/kvC.png}
+\hfill
+\includegraphics[width=0.35\textwidth]{images/kvD.png}
+\qquad\qquad
+\end{frame}
 
 
-\begin{frame}{Дендрит}
+\begin{frame}{Вводные понятия}{Дендрит и его главное дерево}
+\begin{columns}
+\column{0.6\textwidth}
 \begin{definition} 
 Дендритом называется локально связный континуум, не содержащий простых замкнутых дуг.
 \end{definition}
-
-\includegraphics[width=0.48\textwidth]{tr_2f.png}
-\hfill
-\includegraphics[width=0.45\textwidth]{den_int_6.png}
-
-% Пусть $X$ --- дендрит. Тогда из определения дендрита следует, что $X$ односвязно, и что для любых двух точек $x,y \in X$ существует единственная кривая $\gamma$, соединяющая $x$ и $y$.
-\end{frame}
-
-
-%\begin{frame}{Двудольный граф пересечений}
-%\only<1>{
-%Набор компактов $\mathcal{A}=\{A_i,i\in I\}$ в $\mathbb{R}^n$ обладает {\em свойством одноточечного пересечения}, если для любых $i\neq j\in I$, пересечение $P_{ij}=A_i\cap A_j$ не более чем одноточечно.
-%\begin{definition}
-%Пусть $K=K(\eS)$ --- самоподобное множество, обладающее свойством одноточечного пересечения.
-%{\em Граф пересечений} $\Gamma(\eS)$ системы $\eS$ --- это двудольный граф с долями $\eK=\{K_i:\; i\in I\}$ и $\eP=\{p:\;p\in K_i\cap K_j,\; i,j\in I, i\neq j\}$, и с множеством рёбер $E=\{(K_i,p):p\in K_i\}$.
-%\end{definition}
-%% Мы называем $K_i\in \eK$ {\em белыми вершинами}, а $p\in \eP$   {\em чёрными вершинами} графа $\Ga$.\\
-%
-%
-%
-%
-%%\begin{definition}
-%%{\em Дендрит} --- это локально связный континуум, не содержащий простых замкнутых дуг
-%%\end{definition}
-%}
-%\only<2>{
-%\begin{theorem}[Tetenov A. V. (2021)]
-%Пусть $K=K(\eS)$ --- самоподобный континуум со свойством одноточечного пересечения.
-%Если граф пересечений $\hat\Gamma(\eS)$ системы $\eS$ является деревом, то её аттрактор $K$ --- дендрит.
-%\end{theorem}
-%
-%\hspace{1cm}
-%\includegraphics[width=0.35\textwidth]{VicsekSet.png}
+\;\par\;\par
+\begin{definition}
+Пусть $K$ --- самоподобный дендрит c конечной самоподобной границей $\dd K$. 
+Минимальный поддендрит $\hat\gamma\IN K$, содержащий $\dd K$, называется {\em главным деревом} дендрита $K$.
+\end{definition}
+\column{0.4\textwidth}
+\includegraphics[width=\textwidth]{penta4plus3.png}
+\end{columns}
+%\includegraphics[width=0.48\textwidth]{tr_2f.png}
 %\hfill
-%\includegraphics[width=0.35\textwidth]{BIG.pdf}
-%\hspace{1cm}
-%\footnotetext[3]{Tetenov A., Finiteness properties for self-similar continua, arXiv:2003.04202 (2021)}}
-%\end{frame}
+%\includegraphics[width=0.45\textwidth]{den_int_6.png}
+
+\end{frame}
+
+\section{Деформации полигональных систем} %
 
 
-\begin{frame}{}
-\Huge{Деформации полигональных систем}
+\begin{frame}{Полигональные системы и их деформации}{История вопроса}
+\begin{itemize}
+    \item M. Hata (1985) --- критерий связности и некоторые свойства самоподобных дендритов;
+    \item C. Bandt, K. Keller (1991) --- сформулировали достаточное условие того, что самоподобное множество есть дендрит;
+    \item R. Strichartz (1999) --- полигаскеты и кратчайшие дуги;
+    \item А. В. Тетенов, М. С. Самуэль, Д. А. Ваулин (2017) --- полигональные и полиэдральные системы, главное дерево;
+    \item А. В. Тетенов (2021) --- доказал достаточное условие того, что самоподобное множество есть дендрит;
+\end{itemize}
 \end{frame}
 
 
-%\begin{frame}{История вопроса}
-%\begin{itemize}
-%    \item[(1)] M. Hata (1985) --- критерий связности и некоторые свойства самоподобных дендритов;
-%    \item[(2)] C. Bandt, K. Keller (1991) --- сформулировали достаточное условие того, что самоподобное множество есть дендрит;
-%    \item[(3)] R. Strichartz (1999) --- полигаскеты и кратчайшие дуги;
-%    \item[(4)] А. В. Тетенов, М. С. Самуэль, Д. А. Ваулин (2017) --- полигональные и полиэдральные системы, главное дерево;
-%    \item[(5)] А. В. Тетенов (2021) --- доказал достаточное условие того, что самоподобное множество есть дендрит;
-%\end{itemize}
-%\end{frame}
 
 
-\begin{frame}{Полигональные системы}
+
+\begin{frame}{Полигональные системы и их деформации}{Полигональные системы}
 \only<1>{
-Пусть $P\IN \mathbb R^2$ --- многоугольник, \\
+Пусть $P\IN \mathbb R^2$ --- многоугольник, 
 $V_P=\{A_1,...,A_{n_P}\}$ --- множество его вершин, и\\
 $\eS = \{S_1, \ldots, S_m\}$ -- система сжимающих подобий в $\mathbb R^2$ такая, что:\\
 {\bf(D1)}  для любого $i\in I$, множество $P_i=S_i(P)\IN P$;\\
@@ -211,45 +181,26 @@ $\eS = \{S_1, \ldots, S_m\}$ -- система сжимающих подобий
 \begin{theorem}[M. Samuel, A. V. Tetenov, D. A. Vaulin (2017)]
 Аттрактор $K$  полигональной  системы подобий $\eS$ является дендритом.
 \end{theorem}
+\;\\
 \includegraphics[width=0.45\textwidth]{CPS1_P.png}
 \hfill
 \includegraphics[width=0.45\textwidth]{CPS1_K.png}}
 \end{frame}
 
 
-\begin{frame}{Обобщённая полигональная система}
+\begin{frame}{Полигональные системы и их деформации}{Обобщённая полигональная система}
 \begin{definition}	
 Если опустить условие {\bf (D1)}, то система \ $\eS $, удовлетворяющая условиям {\bf (D2)-(D4)},
 называется  обобщённой полигональной системой подобий.
 \end{definition}
+\;\\
 \includegraphics[width=0.45\textwidth]{def1_P.png}
 \hfill
 \includegraphics[width=0.45\textwidth]{def1_K.png}
 \end{frame}
 
 
-% \begin{frame}{Критерий дендритности обобщённой полигональной системы}
-% \begin{theorem}
-% Пусть $\eS$ --- обобщенная $P$-полигональная система.  
-% Если для любых $i, j \in I$ 
-% \begin{equation}\label{icnd}S_i(K)\cap S_j(K)=P_i\cap P_j,\end{equation}
-% то аттрактор $K$ системы $\eS$ является дендритом.
-% \end{theorem}
-% \end{frame}
-
-
-% \begin{frame}{Дендрит с неодноточечным пересечением}
-% \begin{remark} 
-% Обобщенная $P$-полигональная система $\eS$ может не удовлетворять условию критерию дендритности и иметь аттрактор $K$, являющийся дендритом.
-% \end{remark}
-% \vfill
-% \includegraphics[width=.45\textwidth]{cntrex0.jpg}
-% \hfill
-% \includegraphics[width=.45\textwidth]{cntrex.jpg} 
-% \end{frame}
-
-
-\begin{frame}{$\delta$-деформация}
+\begin{frame}{Полигональные системы и их деформации}{$\delta$-деформация}
 \begin{definition}
 Пусть $\delta>0$. 
 Обобщенная $P'$-полигональная система $\eS'=\{S'_1,...,S'_m\}$ называется $\delta$-деформацией $P$-полигональной системы $\eS=\{S_1,...,S_m\}$, если существует биекция $f:\bigcup\limits_{k=1}^m V_{P_k}\to \bigcup\limits_{k=1}^m V_{P'_k}$ такая, что\\
@@ -257,29 +208,33 @@ a) $f|_{V_P}$ продолжается до гомеоморфизма $\tilde f
 b) $|f(x)-x|<\delta$  для любого $x\in \bigcup\limits_{k=1}^m V_{P_k}$\\  
 c) $f(S_k(x))=S'_k(f(x))$ для любого $k\in I$ и $x\in V_P$.
 \end{definition}
+\;\\\qquad\qquad\qquad
+\includegraphics[width=0.25\textwidth]{CPS1_K.png}
+\qquad\qquad\qquad
+\includegraphics[width=0.27\textwidth]{def1_K.png}\qquad
 \end{frame}
 
 
-\begin{frame}{Инвариантная дуга и её параметр}
-\only<1>{
-Пусть $\eS=\{S_1,\ldots,S_m\}$ -- обобщённая $P$-полигональная система.
-$A_i$ -- общая вершина для $P$ и $S_i(P)$, причём $S_i(A_i)=A_i$.
-
-\begin{definition}
-Если дуга $\Gamma\IN K(\eS)$ такова, что $S_i(\Gamma)\IN\Gamma$, то мы говорим, что $\Gamma$ инвариантна относительно подобия $S_i$.
-\end{definition}
-
- \begin{definition}
-Пусть $\rho_i=\Lip(S_i)$ и $\alpha_i=\Delta\underset{\Gamma\mmm S_i(\Gamma)}{\arg}(z-A_i)$.
-Параметром дуги $\Gamma$ относительно $A_i$ называется отношение $\lambda_i=\dfrac{\alpha_i}{\ln\rho_i}.$    
- \end{definition}
-}
+%\begin{frame}{Инвариантная дуга и её параметр}
+%\only<1>{
+%Пусть $\eS=\{S_1,\ldots,S_m\}$ -- обобщённая $P$-полигональная система.
+%$A_i$ -- общая вершина для $P$ и $S_i(P)$, причём $S_i(A_i)=A_i$.
+%
+%\begin{definition}
+%Если дуга $\Gamma\IN K(\eS)$ такова, что $S_i(\Gamma)\IN\Gamma$, то мы говорим, что $\Gamma$ инвариантна относительно подобия $S_i$.
+%\end{definition}
+%
+% \begin{definition}
+%Пусть $\rho_i=\Lip(S_i)$ и $\alpha_i=\Delta\underset{\Gamma\mmm S_i(\Gamma)}{\arg}(z-A_i)$.
+%Параметром дуги $\Gamma$ относительно $A_i$ называется отношение $\lambda_i=\dfrac{\alpha_i}{\ln\rho_i}.$    
+% \end{definition}
+%}
 
 %\only<2>{
 %\begin{center}
 %\includegraphics[width=0.6\textwidth]{InvArc1.png}
 %\end{center}}
-\end{frame}
+%\end{frame}
 
 %\begin{frame}{Лемма о непересекающихся периодических дугах}
 %\begin{lemma}[В. В. Асеев, А. В. Тетенов, А. С. Кравченко (2003)]
@@ -303,7 +258,15 @@ $A_i$ -- общая вершина для $P$ и $S_i(P)$, причём $S_i(A_i
 %\end{frame}
 
 
-\begin{frame}{Основной результат:\\Теорема о совпадении параметров}
+\begin{frame}{Полигональные системы и их деформации}{Основной результат: Теорема о совпадении параметров}
+
+
+\begin{definition}
+Пусть $\eS=\{S_1,\ldots,S_m\}$ -- обобщённая $P$-полигональная система.
+$A_i$ -- общая вершина для $P$ и $S_i(P)$, причём $S_i(A_i)=A_i$.
+Если дуга $\Gamma\IN K(\eS)$ такова, что $S_i(\Gamma)\IN\Gamma$, то мы говорим, что $\Gamma$ инвариантна относительно подобия $S_i$.
+Параметром в точке $A_i$ такой дуги $\Gamma$ будем называть отношение $\lambda=\dfrac{\alpha}{\ln\rho}$, где $\rho=\Lip(S_i)$ и $\alpha=\Delta\underset{{\Gamma\mmm S_i(\Gamma)}}{\mathrm {Arg}}(z-A_i)$.
+\end{definition}
 \begin{block}{Условие совпадения параметров}
 % Для любых $B \in\cup_{i=1}^m  V_{P_i}$ и $A,A'$ таких, что, $S_i(A)=S_j(A')=B$, выполняется равенство $\lambda _i=\lambda _j$.
 Обобщённая полигональная система система $\eS$ удовлетворяет условию совпадения параметров, если для каждого $x=S_i(P)\cap S_j(P)$ (при $i\neq j$) все инвариантные дуги $\gamma_i\IN S_i(K)$ и $\gamma_j\IN S_j(K)$) с концом в $x$ имеют относительно $x$ одинаковые параметры.
@@ -314,24 +277,10 @@ $A_i$ -- общая вершина для $P$ и $S_i(P)$, причём $S_i(A_i
 \end{theorem}
 \end{frame}
 
-% \begin{frame}{Индексная диаграмма}
-% \begin{definition}
-% Пусть $\eS=\{S_1,\ldots,S_m\}$ -- обобщенная $P$-полигональная система, аттрактор $K$ которой -- дендрит. Пусть $\eV=\{v_1,\ldots,v_n\}$ -- множество вершин многоугольника $P$. Индексной диаграммой мы назовем ориентированный граф $D=(\eV,E)$, для которого дуга $(v_i,v_j)\in E$ тогда и только тогда, когда существует такое $S_k\in\eS$, что $v_i=S_k(v_j)$. 
-% \end{definition}
 
-% \includegraphics[width=\textwidth]{id1.pdf}
-
-% \end{frame}
-
-% \begin{frame}{Пример полигональной системы и её индексная диаграмма}
-% \only<1>{\includegraphics[width=\textwidth]{id3.pdf}}
-% \only<2>{\includegraphics[width=\textwidth]{id4.pdf}}
-% \end{frame}
-
-
-\begin{frame}{Основной результат:\\Теорема о малых деформациях}
+\begin{frame}{Полигональные системы и их деформации}{Основной результат: Теорема о малых деформациях}
 \begin{theorem}[Drozdov D., Samuel M., Tetenov A. (2021)]
-Для каждой полигональной системы $\eS$ существует такое $\delta > 0$, что для всякой её $\delta$-деформации $\eS'$, удовлетворяющей условию совпадения параметров, аттрактор $K(\eS')$ является дендритом, гомеоморфным $K(\eS)$.
+Для каждой полигональной системы $\eS$ существует такое $\delta > 0$, что для всякой её $\delta$-деформации $\eS'$, удовлетворяющей условию совпадения параметров, аттрактор $K(\eS')$ является дендритом, изоморфным аттрактору $K(\eS)$.
 \end{theorem}
 % 1)$\da<\dfrac{q_{min}}{8};$  
 % 2)$\da<\dfrac{(1-q_{max})}{8};$ 
@@ -343,137 +292,83 @@ $A_i$ -- общая вершина для $P$ и $S_i(P)$, причём $S_i(A_i
 \end{frame}
 
 
-\begin{frame}{}
-\Huge{Фрактальные $k$-кубы, являющиеся дендритами}
+\begin{frame}{Полигональные системы и их деформации}{Индексная диаграмма}
+
 \end{frame}
 
-%\begin{frame}{История вопроса}
-%\begin{itemize}
-%    \item[(1)] T. Bedford (1984); C. McMullen (1984) --- самоаффинные ковры Бедфорда-МакМаллена;
-%    \item[(2)] Y. Peres (1994) --- условия, при которых мера ковров Бедфорда-МакМаллена несчётно-бесконечна;
-%    \item[(3)] R. Kenyon, Y. Peres (1996) --- размерность и мера губок Серпинского;
-%    \item[(4)] K. Lau, J.J. Luo, H. Rao (2013) --- топологические свойства замощений плоскости фрактальными квадратами;
-%    \item[(5)] L. L. Cristea, B. Steinsky (2009, 2011, 2017, 2020) --- дуги во фрактальных квадратах и треугольниках;
-%    \item[(6)] J. M. Fraser (2021) --- обзор по фрактальнм размерностям губок Серпинского;
-%\end{itemize}
-%\end{frame}
 
 
-\begin{frame}{Фрактальные $k$-кубы}
-\only<1>{
-\begin{definition}[Olsen L. (1998) \cite{Olsen1998}; Lau K., Luo J.J.,Rao H. (2013) \cite{LLR2013}]
-\label{dfn:FQ}
+\section{Фрактальные $k$-кубы, являющиеся дендритами}
+
+
+\begin{frame}{Фрактальные $k$-кубы, являющиеся дендритами}{История вопроса}
+\begin{itemize}
+    \item T. Bedford (1984); C. McMullen (1984) --- самоаффинные ковры Бедфорда-МакМаллена;
+    \item Y. Peres (1994) --- условия, при которых мера ковров Бедфорда-МакМаллена несчётно-бесконечна;
+    \item R. Kenyon, Y. Peres (1996) --- размерность и мера губок Серпинского;
+    \item K. Lau, J.J. Luo, H. Rao (2013) --- топологические свойства замощений плоскости фрактальными квадратами;
+    \item L. L. Cristea, B. Steinsky (2009, 2011, 2017, 2020) --- дуги во фрактальных квадратах и треугольниках;
+    \item J. M. Fraser (2021) --- обзор по фрактальнм размерностям губок Серпинского;
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Фрактальные $k$-кубы, являющиеся дендритами}{Фрактальные $k$-кубы}
+
+\begin{definition}
 Пусть  $D=\{d_1,\ldots,d_r\},\; d_i\in\{0,1,\ldots,n-1\}^k$, где $n\ge 2$, а $1<\#D<n^k$.\\
-{\em Фрактальным $k$-кубом порядка $n$ с множеством единиц $D$} называют компактное множество $K\IN\rr^k$, удовлетворяющее равенству
-\begin{equation}\label{fqeq}
-K=\dfrac{K+D}{n}.
-\end{equation}
+{\em Фрактальным $k$-кубом порядка $n$ с множеством единиц $D$} называют компактное множество $K\IN\rr^k$, удовлетворяющее равенству\\
+\center{$K=\dfrac{K+D}{n}.$}
 \end{definition}
-}
-\only<2>{
-    \includegraphics[width=0.4\textwidth]{FQD.png}
-    \hfill
-    \includegraphics[width=0.4\textwidth]{FQK.png}
-    % $$K=\dfrac{K+D}{n}=\bigcup_{i=1}^rS_i(K),\; \text{ где }\; S_i(x)=\frac{d_i+x}{n}\; \text{ и }\; \fix(S_i)=\frac{d_i}{n-1}.$$
-    }
-\end{frame}
-
-
-\begin{frame}{Грани единичного $k$-куба}
-\begin{columns}
-\column{0.5\textwidth}
-\includegraphics[width=\textwidth]{faces_p.pdf}
-\column{0.5\textwidth}
-\only<1>{
-\begin{definition}\label{dfn:Pa}
-Каждому вектору $\bma\in A=\{-1,0,1\}^k$ соответствует грань $P_\bma:=P\cap(P+\bma)$ единичного $k$-куба $P$.
-\end{definition}}
-\only<2>{
-Введём отношение порядка $\sqsubseteq$ на $A$, равносильное отношению включения $\supseteq$ граней $k$-куба $P$:
-\begin{definition}\label{Aorder}
-Пусть $\bma=(\al_1,\ldots,\al_k)$, $\bmb=(\be_1,\be_2,\ldots,\be_k)\in A$.
-Будем говорить, что $\bma\sqsubseteq\bmb$, если из $\al_i\neq 0$ следует $\be_i=\al_i$.
-Если при этом $\bma\neq\bmb$, то $\bma\sqsubset\bmb$.
-\end{definition}}
-\end{columns}
-% \footnotetext[4]{M. Elekes, T. Keleti, A.M\'ath\'e, Self-similar and self-affine sets: measure of the intersection of two copies, Ergod. Th. \& Dynam. Sys. \textbf{30} (2010), 399--440}
-\end{frame}
-
-
-\begin{frame}{Грани фрактального $k$-куба}
-\only<1>{
-\begin{definition}\label{def-falpha}
-Гранью $K_\bma$ фрактального $k$-куба $K$ называется множество $K\cap P_\bma$.
-\end{definition}
-
-\begin{proposition}\label{prop:Ka}
-Грань $K_\bma$ фрактального $k$-куба $K$ удовлетворяет уравнению $n K_\bma=K_\bma+D_\bma$, где $D_\bma=D\cap(n-1)P_\bma$.
-\end{proposition}}
-\only<2>{
-\includegraphics[width=0.45\textwidth]{images/presentation/qK.png}
+\;\\
+\qquad\qquad
+\includegraphics[width=0.3\textwidth]{FQD.png}
 \hfill
-\includegraphics[width=0.45\textwidth]{images/presentation/qK_a.png}}
+\includegraphics[width=0.3\textwidth]{FQK.png}
+\qquad\qquad
 \end{frame}
 
 
-\begin{frame}{Основной результат:\\Теорема о пересечениях граней фрактальных $k$-кубов }
-Пусть в дальнейшем $K^1$ и $K^2$ --- фрактальные $k$-кубы порядка $n$ с множествами единиц $D^1$ и $D^2$.
-Для любого $\bma\in A$ символом $F_\bma=K^1_\bma\cap(K^2_{-\bma}+\bma)$.
+\begin{frame}{Фрактальные $k$-кубы, являющиеся дендритами}{Основной результат:Теорема о пересечениях граней фрактальных $k$-кубов }
+Пусть $K^1$ и $K^2$ --- фрактальные $k$-кубы порядка $n$ с множествами единиц $D^1$ и $D^2$.
+Для любого $\bma\in A=\{-1,0,1\}^k$ обозначим пересечение $F_\bma=K^1\cap(K^2+\bma)$.
 %Уравнения, задающие множества $F_\bma$, получаются из следующей теоремы.
 
 \begin{theorem}\label{IFC}
 Семейство множеств $\{F_\bma=K^1\cap(K^2+\bma)\ :\ \bma\in A\}$ удовлетворяет системе $\Sa$ уравнений 
-\begin{equation}\label{sideint}
-F_\bma=\bigcup\limits_{\bmb\sqsupseteq\bma} 
-\dfrac{F_\bmb+G_{\bma\bmb}}{n},
-\end{equation}
+$$F_\bma=\bigcup\limits_{\bmb\sqsupseteq\bma} 
+\dfrac{F_\bmb+G_{\bma\bmb}}{n},$$
 где $G_{\bma\bmb}=D^1\cap(D^2+n\bma-\bmb)$.
 \end{theorem}
 Множество $G_{\bma\bma}=D^1\cap(D^2+(n-1)\bma)$ мы обозначим как $G_{\bma}$.
 \end{frame}
 
 
-\begin{frame}{Структурный граф}
-\only<1>{
-\begin{lemma}
-Множество $F_\bma=\0$ тогда и только тогда, когда для любого $\bmb\sqsupseteq\bma$ и для любой цепочки $\bma=\bma_0\sqsubseteq\bma_1\sqsubseteq\ldots \bma_{p-1}\sqsubseteq\bma_p=\bmb$ произведение 
-$\#G_{\bma_0\bma_1}\cdot\#G_{\bma_1\bma_2}\cdot\ldots\cdot\#G_{\bma_{p-1}\bma_p}\cdot\#G_{\bmb}$ равно нулю. 
-\qed
-\end{lemma} 
-
-Отношения между множествами $F_\bma$ описываются {\em структурным графом $\Ga_\Sa$} системы $\Sa$. 
-
-\begin{definition}
-Структурным графом $\Ga_\Sa$ называется отмеченный ориентированный граф с множеством вершин $\{\bma\in A\ :\ F_\bma\neq\0\}$ и множеством рёбер $\{(\bma, \bmb)\ :\ \bma\sqsubseteq\bmb, G_{\bma\bmb}\neq\0, F_\bmb\neq\0\}$, где ребро $(\bma, \bmb)$ направлено из $\bma$ в $\bmb$ и отмечено $G_{\bma\bmb}$.
-\end{definition}}
-\only<2>{
-\center{
-\includegraphics[width=.6\textwidth]{structure_graph_full_new.pdf}}
-}
-\end{frame}
-
-
-\begin{frame}{}
-\only<1>{
-\begin{definition}
-Мы говорим, что в граф $\Ga_\Sa$  содержит  {\em направленный путь из $\bma$ в $\bmb$}, если 
-\begin{itemize}[nolistsep]
-\item[1.] $\bma\sqsubset\bmb$ и существует цепочка $\bma=\bma_0\sqsubset\bma_1\sqsubset\ldots\sqsubset\bma_{p-1}\sqsubset\bma_p=\bmb$ такая, что $F_{\bma_0}\neq\0$ и для любых  $j=1, \ldots, p$ множества $F_{\bma_j}\neq\0$  и  $G_{\bma_{j-1}\bma_j}\neq\0$; либо
-\item[2.] $\bma=\bmb$ и  $G_{\bma}\neq\0$.
-\end{itemize}
-Мы пишем $\bmb\succcurlyeq\bma$, если  $\Ga_\Sa$ содержит направленный путь из $\bma$ в $\bmb$, и $\bmb\succ\bma$, если при этом $\bma\neq\bmb$.
-\end{definition}}
- 
-\only<2>{
-Обозначим через $\Ga_\bma$ подграф графа $\Ga_\Sa$ с множеством вершин $\{\bmb\ :\ \bmb\succcurlyeq\bma\}$.\\
-Если $\Ga_\Sa$ несвязен, то $\Ga_0$ есть компонента графа $\Ga_\Sa$, содержащая вершину $0$, в противном случае $\Ga_\Sa=\Ga_0$.\\
-Вершина $\bmb\succcurlyeq\bma$ является {\em максимальной} для $\Ga_\bma$, если $\bmb$ --- единственная вершина в $\Ga_\bmb$.}
-\end{frame}
+%\begin{frame}{Структурный граф}
+%\only<1>{
+%\begin{lemma}
+%Множество $F_\bma=\0$ тогда и только тогда, когда для любого $\bmb\sqsupseteq\bma$ и для любой цепочки $\bma=\bma_0\sqsubseteq\bma_1\sqsubseteq\ldots \bma_{p-1}\sqsubseteq\bma_p=\bmb$ произведение 
+%$\#G_{\bma_0\bma_1}\cdot\#G_{\bma_1\bma_2}\cdot\ldots\cdot\#G_{\bma_{p-1}\bma_p}\cdot\#G_{\bmb}$ равно нулю. 
+%\qed
+%\end{lemma} 
+%
+%Отношения между множествами $F_\bma$ описываются {\em структурным графом $\Ga_\Sa$} системы $\Sa$. 
+%
+%\begin{definition}
+%Структурным графом $\Ga_\Sa$ называется отмеченный ориентированный граф с множеством вершин $\{\bma\in A\ :\ F_\bma\neq\0\}$ и множеством рёбер $\{(\bma, \bmb)\ :\ \bma\sqsubseteq\bmb, G_{\bma\bmb}\neq\0, F_\bmb\neq\0\}$, где ребро $(\bma, \bmb)$ направлено из $\bma$ в $\bmb$ и отмечено $G_{\bma\bmb}$.
+%\end{definition}}
+%\only<2>{
+%\center{
+%\includegraphics[width=.6\textwidth]{structure_graph_full_new.pdf}}
+%}
+%\end{frame}
 
 
-\begin{frame}{Основной результат:\\Мощность множества $F_\bma$}
+
+
+\begin{frame}{Фрактальные $k$-кубы, являющиеся дендритами}{Основной результат: Мощность множества $F_\bma$}
 \begin{theorem}
-\begin{itemize}[nolistsep]
+\begin{itemize} %[nolistsep]
 \item[(1)] Если $\#G_\bmb>1$ для некоторого $\bmb\succcurlyeq\bma$, то  $F_\bma$ несчётно.
 
 \item[(2a)] Если  $\#G_\bmb\leq1$ для любого $\bmb\succcurlyeq\bma$, то  $F_\bma$ не более чем счетно.
@@ -488,111 +383,67 @@ $\#G_{\bma_0\bma_1}\cdot\#G_{\bma_1\bma_2}\cdot\ldots\cdot\#G_{\bma_{p-1}\bma_p}
 \end{theorem}
 \end{frame}
 
-\begin{frame}{Пересечение двух фрактальных квадратов, состоящее из $24$ точек, и его структурный граф $\Ga_\Sa$}
-\includegraphics[width=0.6\textwidth]{FSI_6x6_DS_new.pdf}
-\hfill
-\includegraphics[width=.35\textwidth]{FSI_6x6_SG_new.pdf}
-\end{frame}
-
-\begin{frame}{}
-Далее будем полагать, что $K=K^1=K^2$, тогда $F_\bma=K_\bma\cap(K_{-\bma}+\bma)$.
-\begin{corollary}
-Фрактальный $k$-куб $K$ является множеством с одноточечным пересечением, если для каждого $\bma\succ0$ множество $F_\bma$ одноточечно.
-\end{corollary}
-\begin{theorem}
-Пусть $K=\dfrac{K+D}{n}$ фрактальный куб с одноточечным пересечением. 
-Если существуют неравные $\bma,\bmb\neq0$ такие, что $F_\bma=F_\bmb\neq\0$ и $G_{0\bma}\neq\0,\ G_{0\bmb}\neq\0$,  то для каждой тройки $d, d+\bma, d+\bmb\in D$ копии $K_{(d)},$ $K_{(d+\bma)}$ и $K_{(d+\bmb)}$ пересекаются по общей точке $\{x\}=\dfrac{F_\bma+d}{n}=\dfrac{F_\bmb+d}{n}$.
-\end{theorem}
-\end{frame}
-
-\begin{frame}
-\center{
-\includegraphics[width=.9\textwidth]{FSD_ord3_SSB.pdf}}
-\end{frame}
 
 
-\begin{frame}{Алгоритм проверки фрактального $k$-куба}
+\begin{frame}{Фрактальные $k$-кубы, являющиеся дендритами}{Основной результат: Алгоритм проверки фрактального $k$-куба}
 
-%Чтобы проверить, является ли фрактальный $k$-куб $K$ дендритом с одноточечным пересечением, нужно выполнить следующие шаги:
+Чтобы проверить, является ли фрактальный $k$-куб $K$ дендритом с одноточечным пересечением, нужно выполнить следующие шаги:
 
-\begin{itemize}
+\begin{enumerate}
 
-\item[1] Найдём все множества $G_\bma, G_{\bma\bmb}$ и выпишем систему уравнений $\Sigma$.
-Если $F_0=\0$, то $K$ несвязен и не может быть дендритом.
+\item  Найдём для пересечений $\{F_\bma=K\cap(K+\bma), \bma\in A\}$ все множества $G_\bma, G_{\bma\bmb}$ и выпишем систему уравнений $\Sigma$.
+%Если $F_0=\0$, то $K$ несвязен и не может быть дендритом.
 
-\item[2] Построим для системы $\Sa$ её структурный граф $\Ga_\Sa$.
+\item  Построим для системы $\Sa$ её структурный граф $\Ga_\Sa$.
 Если граф $\Ga_\Sa$ несвязен, то рассматриваем подграф $\Ga_0$.
  
-\item[3] Проверим, является ли $K$ множеством с одноточечным пересечением.
+\item  Проверим, является ли $K$ множеством с одноточечным пересечением.
 Если это не так, то $K$ не является дендритом с одноточечным пересечением.
     
-\item[4] Построим двудольный граф пересечений $\hat\Gamma$ для фрактального куба $K$.
+\item  Построим двудольный граф пересечений $\hat\Gamma$ для фрактального куба $K$.
 При этом следует учесть случаи, когда чёрная вершина в $\hat\Gamma$ соединена более чем с двумя белыми вершинами.
 
-\item[5] Если получившийся двудольный граф пересечений $\hat\Gamma$ является деревом, то $K$ --- дендрит с одноточечным пересечением.    
-\end{itemize}
+\item  Если получившийся двудольный граф пересечений $\hat\Gamma$ является деревом, то $K$ --- дендрит с одноточечным пересечением.    
+\end{enumerate}
 \end{frame}
 
 
-\begin{frame}{}
-\Huge{Фрактальные квадраты с конечным пересечением}
-\end{frame}
+\section{Фрактальные квадраты с конечным пересечением}
 
-\begin{frame}{Основной результат:\\Критерий дендритности фрактального квадрата}
 
+\begin{frame}{Фрактальные квадраты с конечным пересечением}{Основной результат: Критерий дендритности фрактального квадрата}
 Множество $F_\bma$ одноточечно, если \\
 \textbf{(a)} $\#G_{\bma\bma}=1$ и $\#F_\bmb\cdot\#G_{\bma\bmb}=0$ для каждого $\bmb\sqsupset\bma$; или\\
 \textbf{(b)} $\#G_{\bma\bma}=0$ и существует $\bmb\sqsupset\bma$ такое, что $\#F_\bmb\cdot\#G_{\bma\bmb}=1$.
-
-\begin{proposition}
-Если фрактальный квадрат $K$ является дендритом, то он обладает свойством одноточечного пересечения.
-\end{proposition}
+\begin{theorem}
+Всякий односвязный фрактальный квадрат $K$ либо совпадает с $P$, либо является дендритом.
+В последнем случае $K$ обладает свойством одноточечного пересечения.
+\end{theorem}
 \begin{corollary}
 Фрактальный квадрат $K$ является дендритом тогда и только тогда, когда его двудольный граф пересечений является деревом.
 \end{corollary}
-%\begin{center}
-%\includegraphics[width=0.8\textwidth]{line_int.png}
-%\end{center}
 \end{frame}
 
 
-
-
-
-\begin{frame}{Главное дерево}
-\only<1>{
-\begin{definition}
-{\em Самоподобной границей} аттрактора $K$ называется множество $\dd K$ всех $x\in K$ таких, по образам которых пересекаются друг с другом копии аттрактора $K$.
-\end{definition}
-\begin{definition}
-Пусть $K$ --- самоподобный дендрит c конечной самоподобной границей $\dd K$. 
-Минимальный поддендрит $\hat\gamma\IN K$, содержащий $\dd K$, называется {\em главным деревом} дендрита $K$.
-\end{definition}}
-\only<2>{
-\center{
-\includegraphics[width=0.6\textwidth]{penta4plus3.png}}}
-\end{frame}
-
-
-\begin{frame}{Самоподобная граница  фрактальных квадратов, являющихся дендритами}
+\begin{frame}{Фрактальные квадраты с конечным пересечением} {Самоподобная граница односвязных фрактальных квадратов}
 \begin{theorem}\label{ssboundary}
-Пусть $K$ --- фрактальный квадрат, являющийся дендритом и не являющийся отрезком.
+Пусть $K$ --- нетривиальный односвязный фрактальный квадрат (т.е. являющийся дендритом и не являющийся отрезком).
 Тогда $\#\dd K\in\{3,\ 4,\ 6\}$. \\
 Если $\#\dd K=4$, то  $\dd K=F_\bma\cup F_{-\bma}\cup F_\bmb\cup F_{-\bmb}$, где   пара  $\bma,\bmb$ принимает одно из следующих значений:
-	\begin{itemize}[nolistsep]
+	\begin{itemize}%[nolistsep]
 	\item[{\bf A.}] $\bma=(1,0)$, $ \bmb=(0,1)$;
 	\item[{\bf B.}] $\bma=(1,1)$, $ \bmb=(1,-1)$;
 	\item[{\bf C.}] $\bma\in\{(1,1),\ (1,-1)\},\bmb\in\{(1,0),\ (0,1)\}$.
 	\end{itemize}
  Если $\#\dd K=3$ или $\#\dd K=6$, то
-\begin{itemize}[nolistsep]
+\begin{itemize}%[nolistsep]
 	\item[{\bf D.}] $\dd K=F_{(1,0)}\cup F_{(-1,0)}\cup F_{(0,1)}\cup F_{(0,-1)}\cup F_\bmb\cup F_{-\bmb}$, где $\bmb\in\{(1,1),\ (1,-1)\}$.
 	\end{itemize}
 \end{theorem}
 \end{frame}
 
 
-\begin{frame}{
+\begin{frame}{Фрактальные квадраты с конечным пересечением}{
 \only<1>{Типы \textbf{A}, \textbf{B} и \textbf{C}}
 \only<2>{Типы \textbf{D3} и \textbf{D6}}}
 \begin{center}
@@ -610,18 +461,60 @@ $\#G_{\bma_0\bma_1}\cdot\#G_{\bma_1\bma_2}\cdot\ldots\cdot\#G_{\bma_{p-1}\bma_p}
 \end{frame}
 
 
-\begin{frame}{Основной результат:\\Классификация фрактальных квадратов, являющихся дендритами}
+\begin{frame}{Фрактальные квадраты с конечным пересечением}{Главные деревья односвязных фрактальных квадратов}
+\only<1>{
+\center{\includegraphics[width=0.8\textwidth]{list1.pdf}}}
+\only<2>{
+\begin{theorem}\label{thm:corner}
+Пусть $K$ --- односвязный фрактальный квадрат.
+\begin{itemize}
+\item[(A)] Если $K$ имеет границу типа  {\bf A}, то у него может быть
+	\begin{itemize}
+	\item[(a.1)] две угловые точки с порядками ветвления $2,1$ или $1,1$;
+	\item[(a.2)] одна угловая точка с порядком ветвления $\le 2$; или 
+	\item[(a.3)] могут вовсе отсутствовать угловые точки.
+	\end{itemize}
+\item[(B)] Если $K$ имеет границу типа  {\bf B}, то $K$ имеет четыре угловые точки с порядком ветвления $1$.
+\item[(C)] Если $K$ имеет границу типа {\bf C}, то $K$ имеет две угловые точки, порядки ветвления которых $\le 2$.
+\item[(D)] Если же $K$ имеет границу типа {\bf D}, то он может иметь 
+	\begin{itemize}
+	\item[(d.1)] две угловые точки порядков $\le 2$ для подтипа {\bf D6}; или
+	\item[(d.2)] три угловые точки порядка $1$ для подтипа {\bf D3}
+	\end{itemize}
+\end{itemize}
+\end{theorem}}
+\only<3>{
+\begin{theorem}\label{order}
+Пусть $K$ --- односвязный фрактальный квадрат. 
+Тогда $Ord(x,K)\le 4$ для любого $x\in K$.\\
+Если $\dd K$ типа {\bf D} и $x\notin S_\bi(\dd K)$ для любого $\bi\in I^*$, то $Ord(x,K)\le 3$.\\
+Если $\dd K$ типа {\bf D3} и $x\in \dd K_\bi$ для некоторого $\bi\in I^*$, то $Ord(x, K)\le 3$.
+\end{theorem}
+\begin{proposition}\label{lem:d4bound}
+Допустим, $K$ относится к типу {\bf D6} и $\gamma$ --- его главное дерево.
+\begin{itemize}
+    \item[(i)] $Ord(x,\gamma)\leq2$ для любого $x\in\dd K$;
+    \item[(ii)] $Ord(x,\gamma)\leq3$ для любого $x\in\ga$.
+\end{itemize}
+\end{proposition}}
+\only<4>{
+\center{\includegraphics[width=0.8\textwidth]{list2.pdf}}}
+\end{frame}
+
+
+\begin{frame}{Фрактальные квадраты с конечным пересечением}{Основной результат: Классификация фрактальных квадратов}
 
 \begin{theorem}[Tetenov A., Drozdov D.  (2023)]
-Для фрактальных квадратов, являющихся дендритами, существует только $7$ типов главного дерева, модели которых показаны ниже.
+Для нетривиальных односвязных фрактальных квадратов существует только $7$ топологических типов главного дерева, модели которых показаны ниже.
 \end{theorem}
+\;\\
 \includegraphics{mt1.pdf}
 \hfill
 \includegraphics{mt2.pdf}
 \hfill
 \includegraphics{mt3.pdf}
 \hfill
-\includegraphics[width=2.2cm]{mt4.pdf}\\
+\includegraphics[width=2.2cm]{mt4.pdf}\\ \;\\
 \includegraphics[width=2.5cm]{mt5.pdf}
 \hfill
 \includegraphics[width=2.3cm]{mt6.pdf}
@@ -630,8 +523,8 @@ $\#G_{\bma_0\bma_1}\cdot\#G_{\bma_1\bma_2}\cdot\ldots\cdot\#G_{\bma_{p-1}\bma_p}
 \end{frame}
 
 
-\begin{frame}{}
-\frametitle{
+\begin{frame}{Фрактальные квадраты с конечным пересечением}
+\framesubtitle{
     \only<1>{Дерево 1: классы 1 (\textbf{A}) и 2 (\textbf{C})}
     \only<2>{Дерево 2: классы 3 (\textbf{A}), 4 (\textbf{A}), 5 (\textbf{C}) и 6 (\textbf{D3})}
     \only<3>{Дерево 3: классы 7 (\textbf{A}), 8 (\textbf{B}) и 9 (\textbf{C})}
@@ -729,118 +622,84 @@ $\#G_{\bma_0\bma_1}\cdot\#G_{\bma_1\bma_2}\cdot\ldots\cdot\#G_{\bma_{p-1}\bma_p}
 \end{frame}
 
 
-%\large
-%\begin{frame}[allowframebreaks]{Литература}
-%\begin{thebibliography}{99}
-%
-%\bibitem{Hut1981}{
-%    {\sc J. Hutchinson,}
-%    {\it Fractals and {S}elf-{S}imilarity,}
-%    {Indiana University Mathematics Journal (5) \textbf{30} (1981) 713--747}}
-%    
-%\bibitem{Hata1985}{
-%    {\sc M. Hata,}
-%    {\it On the structure of self-similar sets,}
-%    {Japan Journal of Applied Mathematics (2) \textbf{2} (1985) 381--414}}
-%
-%\bibitem{SSS2}{
-%    {\sc C. Bandt, K. Keller,}
-%    {\it Self‐Similar Sets 2. A Simple Approach to the Topological Structure of Fractals,}
-%    {Mathematische Nachrichten (1) \textbf{154} (1991) 27--39}}
-%
-%\bibitem{Strichartz1999}{
-%    {\sc R. Strichartz,}
-%    {\it Isoperimetric Estimates on Sierpinski Gasket Type Fractals,}
-%    {Transactions of the American Mathematical Society (5) \textbf{135} (1999) 1705--1752}}
-%
-%% \bibitem{strich1999}{
-%%     {\sc R. Strichartz,}
-%%     {\it Analysis on fractals}
-%%     {Notices AMS (10) \textbf{46} (1999) 1199--1208}}
-%
-%\bibitem{6}{
-%    {\sc А. В. Тетенов, М. С. Самуэль, Д. А. Ваулин,}
-%    {\it О дендритах, заданных системами полиэдров и их точках ветвления,}
-%    {Труды Института математики и механики УрО РАН (4) \textbf{23} (2017) 281--291}}
-%
-%\bibitem{7}{
-%    {\sc M. Samuel, A. V. Tetenov, D. A. Vaulin,}
-%    {\it Self-similar dendrites generated by polygonal systems in the plane,}
-%    {Siberian Electronic Mathematical Reports \textbf{14} (2017) 737--751}}
-%
-%\bibitem{8}{
-%    {\sc A. Tetenov,}
-%    {\it Finiteness properties for self-similar continua,}
-%    {arXiv:2003.04202 (2021)}}
-%    
-%\bibitem{bedf1984}    
-%	{\sc Bedford, T.}
-%    {\it Crinkly curves, Markov partitions and dimension.}
-%    Ph.D. thesis, University of Warwick, 1984.
-%
-%\bibitem{McMul}    
-%	{\sc McMullen, C.}
-%	{The {Hausdorff} dimension of general {Sierpi{\'n}ski} carpets.}
-%	{\it Nagoya Mathematical Journal 96} (1984), 1--9.
-%
-%\bibitem{bib:peres1996}
-%    {\sc Kenyon R., Peres Y.,} 
-%    {\em Measures of full dimension on affine-invariant sets,}
-%    {Ergod. Th. \& Dynam. Sys. (2) \textbf{16} (1996), 307--323}
-%
-%\bibitem{bib:peres1994}
-%    {\sc Peres Y.,}
-%    {\em The self-affine carpets of McMullen and Bedford have infinite Hausdorff measure,}
-%    {Math. Proc. Camb. Phil. Soc. (3) \textbf{116} (1994), 513--526}
-%
-%% \bibitem{bib:Olsen1998}    
-%%    {\sc Olsen L.,}
-%%    {\em Self-affine multifractal Sierpinski sponges in $\rr^d$,}
-%%    {Pac. J. Math. \textbf{116} (1998), 143--199}
-%
-%% \bibitem{cristea2020}    
-%% 	{\sc Cristea, L. L. and Leobacher, G.}
-%% 	{Supermixed labyrinth fractals.}
-%% 	{\it Geometriae Dedicata 141}, 1 (2009), 1--17.
-%
-%\bibitem{cristea2009}    
-%	{\sc Cristea, L. L. and Steinsky, B.}
-%	{Curves of infinite length in 4×4-labyrinth fractals.}
-%	{\it Geometriae Dedicata 141}, 1 (2009), 1--17.
-%
-%\bibitem{cristea2011}    
-%	{\sc Cristea, L. L. and Steinsky, B.}
-%	{Curves of infinite length in labyrinth fractals.}
-%	{\it Proceedings of the Edinburgh Mathematical Society 54}, 2 (2011), 329--344.
-%	
-%% \bibitem{cristea2017}    
-%% 	{\sc Cristea, L. L. and Steinsky, B.}
-%% 	{Mixed labyrinth fractals.}
-%% 	{\it Topology and its Applications 229} (2017), 112–125.
-%
-%\bibitem{bib:LLR2013}    
-%    {\sc Lau K., Luo J.J.,Rao H.}
-%    {\em Topological structure of fractal squares,}
-%    {Math. Proc. Camb. Phil. Soc. \textbf{155} (2013), 73--86}
-%
-%\bibitem{Xiao2021} 
-%	{\sc J.-C. Xiao,} 
-%	{\em Fractal squares with finitely many connected components,}
-%	{Nonlinearity, (4)\textbf{34} (2021) 1817–1836}
-%	
-%\bibitem{Fraser2021} 
-%	{\sc J. M. Fraser,}
-%	{Fractal Geometry of Bedford-McMullen Carpets,} 
-%	{in Thermodynamic Formalism, M. Pollicott and S. Vaienti, Eds., 
-%	Springer International Publishing (2021)}
-%\end{thebibliography}
-%\end{frame}
+\begin{frame}{Фрактальные квадраты с конечным пересечением}{Фрактальные квадраты с конечным числом компонент}
+\only<1>{
+Для произвольного  топологического пространства  $A$, будем обозначать через $C(A)$  совокупность всех связных компонент $A$.
+
+\begin{definition}\label{comps}
+Рассмотрим фрактальный квадрат ${\mathcal{K}}=\dfrac{{\mathcal{K}}+D}{n}$.
+Тогда будем называть множество единиц $D'\subset D$ связным, если простой граф пересечений системы $\Sigma(D')=\{ K_d=S_d({\mathcal{K}}), d \in D'\}$ связен.
+\end{definition}
+
+Множество $D$ распадается  на систему связных компонент  $C(D)=\{D_1,\ldots,D_k\}$.
+Обозначим символами $F_i=\bigcup\limits_{d\in D_i}S_d({\mathcal{K}})$ объединения копий из этих компонент.
+
+Рассмотрим систему множеств $F_{d,i}= S_d(F_i)$, где $d\in D$ а $i=1,...,k$.
+Пусть $G_{\mathcal{K}}$ --- простой  граф пересечений этой системы.
+
+\begin{theorem}[J.-C. Xiao (2021)]\label{xiaomain}
+Пусть ${\mathcal{K}}$ -- фрактальный квадрат с множеством единиц $D$, для которого   $\#C(D)\geq2$.\\
+ $\#C({\mathcal{K}})=\#C(D)$ тогда  и только тогда, когда  $\#C(D)=\#C(G_{\mathcal{K}})$.
+\end{theorem}
+\footnotetext[1]{{\bf Xiao J.-C.}, Fractal squares with finitely many connected components // Nonlinearity. 2021. Т. 34. № 4. С. 1817--1836.}}
+\only<2>{
+\includegraphics[width=0.4\textwidth]{FrSq_5_2c.png}
+\hfill
+\includegraphics[width=0.4\textwidth]{IGC0_2c.pdf}}
+\end{frame}
 
 
+\begin{frame}{Фрактальные квадраты с конечным пересечением}{Основной результат: Существование самоподобных $k$-лесов}
+\begin{definition}\label{def:forest}
+Самоподобным $k$-лесом мы будем называть самоподобное множество $\mathcal{K}$, являющееся дизъюнктным объединением дендритов $\mathcal{C}_i$ при $i=1,\ldots,k$:
+$$\mathcal{K}=\bigsqcup_{i=1}^k\mathcal{C}_i.$$
+\end{definition}
+\begin{theorem}\label{thm:mainresult}
+Для любых натуральных $k\geq2$  и  $ k_1\ge k+2$ существует самоподобный $k$-лес, являющийся фрактальным квадратом порядка $n=(2k-1)k_1$.
+\end{theorem} 
+\end{frame}
+
+
+\begin{frame}{Фрактальные квадраты с конечным пересечением}{Пример: самоподобный $2$-лес, состоящий из $2$-башен, и его граф $G_{\mathcal{K}}$}
+\fbox{\includegraphics[width=0.45\textwidth]{FrSq_12_2d.png}}
+\hfill
+\includegraphics[width=0.45\textwidth]{IGC1_2f_2t.pdf}
+\end{frame}
+
+
+\begin{frame}{Фрактальные квадраты с конечным пересечением}{Примеры: самоподобный $3$-лес и самоподобный $4$-лес}
+\fbox{\includegraphics[width=0.45\textwidth]{FrSq_25_3d.png}}
+\hfill
+\fbox{\includegraphics[width=0.45\textwidth]{FrSq_42_4d4t.png}}
+\end{frame}
+
+
+\section{Выносимые на защиту положения} 
+
+\begin{frame}{Выносимые на защиту положения}
+
+{\footnotesize
+\begin{enumerate}
+\item Найдено необходимое условие, при котором аттрактор обобщённой полигональной системы является дендритом.
+\item Доказано, что при достаточно малом $\delta=\delta(\eS)>0$ аттрактор любой (удовлетворяющей условию совпадения параметров) $\delta$-деформации $\eS'$ полигональной системы $\eS$ является дендритом, изоморфным аттрактору системы $\eS$.
+\item Получена формула, выражающая пересечение двух фрактальных $k$-кубов в терминах их множеств единиц.
+Найдены условия, при которых такое пересечение будет пустым, конечным, счётным и несчётным.
+Для конечного пересечения получена оценка мощности.
+\item Разработан алгоритм, позволяющий проверить, является ли фрактальный $k$-куб дендритом с одноточечным пересечением.
+\item Доказано, что нетривиальные односвязные фрактальные квадраты являются дендритами со свойством одноточечного пересечения.
+\item Доказано, что нетривиальные односвязные фрактальные квадраты допускают ровно семь возможных топологических типов главного дерева.
+\item Доказано, что самоподобные $k$-леса могут быть реализованы на фрактальных квадратах.
+\end{enumerate}}
+
+\end{frame}
+
+
+\section{Апробация результатов}
 \begin{frame}{Апробация результатов}
 
 {\normalsize
 \begin{thebibliography}{9}
+{\small
 \bibitem{DST2021}
 {\bf Drozdov D., Samuel M., Tetenov A.},
 On deformation of polygonal dendrites preserving the intersection graph //
@@ -851,23 +710,21 @@ The Art of Discrete and Applied Mathematics. 2021. Т. 4. № 2. С. 1--21.
 On $\delta$-deformations of Polygonal Dendrites // 
 Topological Dynamics and Topological Data Analysis. : Springer Singapore, 2021. С. 147--164.
 
-\bibitem{TD2022fs}
-{\bf Drozdov D., Tetenov A.}, 
-On fractal squares possessing finite intersection property // 
-Bulletin of National University of Uzbekistan: Mathematics and Natural Sciences. 2022. Т. 5. № 3. С. 164--181.
+\bibitem{DT2024fqd}
+{\bf Drozdov D. A., Tetenov A. V.}, On the dendrite property of fractal cubes // Advances in the Theory of Nonlinear Analysis and Its Application. 2024. Т. 8. № 1. С. 73--80.
 
 \bibitem{TD2023fs}
 {\bf Drozdov D., Tetenov A.}, 
 On the classification of fractal square dendrites // 
 Advances in the Theory of Nonlinear Analysis and Its Application. 2023. Т. 7. № 3. С. 19--96.
 
-\bibitem{VDT2020}{\bf Ваулин Д. А., Дроздов Д. А., Тетенов А. В.},
-О связных компонентах фрактальных кубов // 
-Труды Института математики и механики УрО РАН. 2020. Т. 26. № 2. С. 98--107.
+\bibitem{Drozdov2025} 
+{\bf Дроздов Д. А.}, 
+Самоподобные леса на фрактальных квадратах // Сибирские электронные математические известия. 2025. Т. 22, № 1. С. 385--394.}
 \end{thebibliography}}
 \end{frame}
 
-
+\section{}
 \begin{frame}{}
 \begin{center}
 \Huge Благодарю за внимание
